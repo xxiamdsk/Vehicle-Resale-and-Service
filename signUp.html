@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+      <div class="container">
+        <form name="f1" action="" method="post" onsubmit="return validation()" class="row rounded mb-5  pe-4  g-3">
+          <div class="row shadow">
+          <div class="col signUp-img ">
+            <img src="handshake-car-dealership.jpg" class="img-fluid object-fit-cover " alt="">
+          </div>
+          <div class="col col-lg-5">
+              <h1 style="padding-top: 10px;text-align: center;">Be a part of our family</h1>
+              <div class="row ">
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Name</label>
+              <input type="text" class="form-control shadow" id="inputName">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control shadow" id="inputEmail">
+              </div>
+              </div>
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">phone no</label>
+                <input type="number" class="form-control shadow" id="inputPhone">
+              </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control shadow" id="inputAddress" placeholder="1234 Main St">
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control shadow" id="inputCity">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select shadow">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+
+            <div class="col-12  ">
+              <button type="submit" class="btn2 mb-4 mt-4 float-end login shadow ">Submit</button>
+            </div>
+            </div>
+          </div>
+          </form>
+      </div>
+
+
+<script>
+      function validation()  
+      {  
+          var id=document.f1.inputName.value;  
+          var em=document.f1.inputEmail.value;
+          var no=document.f1.inputPhone.value;
+          var add=document.f1.inputAddress.value;
+          var city=document.f1.inputCity.value;
+          var st=document.f1.inputState.value;
+          if(id.length==""||em.length==""||no.length==""||add.length==""||city.length==""||st.length=="") {  
+              alert("field are empty");  
+              return false;  
+          }
+          else  
+          {  
+              
+          }                             
+      } 
+</script>      
+</body>
+</html>

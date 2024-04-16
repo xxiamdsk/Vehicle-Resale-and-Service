@@ -2,67 +2,214 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Resale and Service</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px;
-        }
-        nav a:hover {
-            background-color: #666;
-        }
-        .container {
-            margin: 20px;
-        }
-        .login-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+    <title>WHEELXCHANGE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+<body>     
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container-fluid">
+          <div class="dropdown" id="log-btn">
+            <button class="btn hello" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hello USER 
+            </button>
+            <i class="far fa-user " data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <div class="dropdown-menu shadow">
+              <a href="login.html" ><button class="login shadow">Login/Sign up</button></a>
+            <ul class="items">
+              <hr>
+              <li><a class="dropdown-item" href="#">MY BOOKINGS</a></li>
+              <hr>
+              <li><a class="dropdown-item" href="#">MY APPOINTMENTS</a></li>
+              <hr>
+              <li><a class="dropdown-item" href="#"></a></li>
+            </ul>
 
-<header>
-    <h1>Vehicle Resale and Service</h1>
-</header>
+          </div>
+          </div>
+          <a class="navbar-brand text-dark ps-5 " href="ABC.html"><img class="logo" src="wheelXchange(1).png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse  navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item fw-bold text-dark">
+                <a class="nav-link active text-dark" aria-current="page" href="index.html">BUY A CAR</a>
+              </li>
+              <li class="nav-item fw-bold text-dark">
+                <a class="nav-link text-dark" href="#new">SELL A CAR</a>
+              </li>
+              <li class="nav-item fw-bold text-dark">
+                  <a class="nav-link text-dark" href="#">BOOK SERVICE</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Vehicles</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-    <a href="login.html" target="_blank" rel="noopener noreferrer"><button class="login-button">Login / Sign Up</button></a>
-</nav>
 
-<div class="container">
-    <h2>Welcome to our website!</h2>
-    <p>This is a place where you can find great deals on vehicles and services.</p>
-</div>
+   <section class="home" id="home">
+    <h1 class="brand-line" data-speed="-2">find your car</h1>
+    <img  class="brand-img" data-speed="5"  src="kindpng_4950809.png" alt="">
+    <form action="" method="post">
+      <input type="search" class="search" name="" id="" placeholder="search your Dream Car">
+      <button class="btn btn2">GO</button>
+    </form>
+   </section>
 
+
+
+
+
+
+    <div class="container-fluid ">
+    <div class="row bestseller shadow pb-4">
+      <h1 class="display-4 mb-4 text-light">Best seller for you </h1>
+      <div class="col">
+    <div class="card shadow">
+      <img src="download.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Maruti Swift Dzire</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">INTERESTED</a>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="card shadow">
+      <img src="fortu.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Toyota Fortuner</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">INTERESTED</a>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card shadow">
+        <img src="city.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Honda City</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">INTERESTED</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow">
+        <img src="eco.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ford Ecosport</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">INTERESTED</a>
+        </div>
+      </div>
+    </div>
+    <div> 
+      <a href=""><button class="btn btn-primary float-end mt-3 me-4">view all cars</button></a>
+    </div>
+    </div>
+
+    </div>
+    
+    <div class="container-fluid">
+    <h1 class="display-4  mt-5">search by catagories</h1>
+      <div class="row row-sm-3">
+        <div class="col col-lg-3 ">
+          <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col col-lg-3 ">
+          <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col col-lg-3 ">
+          <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col col-lg-3 ">
+          <select class="form-select form-select-lg" aria-label="Large select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="container-fluid">
+    <h1 class="display-4">why choose us</h1>
+      <div class="row">
+        <div class="col">
+          
+        </div>
+        <div class="col">
+
+        </div>
+        <div class="col">
+
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-row">
+          <div class="footer-col">
+            <h1>About us</h1>
+            <a class="navbar-brand" href="ABC.html"><img class="logo" src="wheelXchange(2).png" alt=""></a>
+              <p>We are a leading car resell and service company, providing top-notch services to our customers for over a decade. Our team of experienced professionals is dedicated to ensuring your car is in the best condition possible.</p>
+          </div>
+          <div class="footer-col">
+              <h2>Services</h2>
+              <ul class="footer-list">
+                  <li><a href="#">Car Resell</a></li>
+                  <li><a href="#">Car Service</a></li>
+                  <li><a href="#">Maintenance</a></li>
+                  <li><a href="#">Repair</a></li>
+                  <li><a href="#">Parts</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h2>Contact Us</h2>
+              <ul class="footer-list">
+                  <li><i class="fa fa-map-marker"></i> 1234 Street, City, State, Country</li>
+                  <li><i class="fa fa-phone"></i> +123 456 7890</li>
+                  <li><i class="fa fa-envelope"></i> <a href="mailto:info@carresellandservice.com">info@carresellandservice.com</a></li>
+              </ul>
+          </div>
+          <div class="footer-col ms-5 social-icons">
+              <h2>Follow Us</h2>
+                  <i class="fab fa-facebook-f"><a href=""></a></i>
+                  <i class="fab fa-twitter"><a href=""></a></i>
+                  <i class="fab fa-instagram"><a href=""></a></i>
+                  <i class="fab fa-youtube"><a href=""></a></i>
+          </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright © 2024 Car Resell and Service. All Rights Reserved.</p>
+  </footer>
+      
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
