@@ -72,9 +72,6 @@
 #num{
   border-style: none;
 }
-.input{
-
-}
 .items{
   padding-top:20px;
   padding-left: 10px;
@@ -110,8 +107,12 @@
   .row{
     padding-top: 50px;
   }
+
+
+
+
   .bestseller{
-    background-color: orange;
+    background: linear-gradient(to right, rgb(255, 166, 0),rgb(255, 98, 0))
   }
   
   .home{
