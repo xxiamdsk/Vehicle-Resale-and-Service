@@ -37,79 +37,9 @@
 <body class="body-wrapper">
 
 
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<nav class="navbar navbar-expand-lg navbar-light navigation">
-						<a class="navbar-brand" href="index.html">
-							<img src="images/wheelXchange(1).png" alt="logo" style="height: 40px ; width: 150px;">
-						</a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse"
-							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-							aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto main-nav ">
-								<li class="nav-item active">
-									<a class="nav-link" href="index.html">Home</a>
-								</li>
-								<li class="nav-item ">
-									<a class="nav-link"
-										href="#!">Buy
-									</a>
-								</li>
-								<li class="nav-item ">
-									<a class="nav-link"
-										href="#!">Sell
-									</a>
-								</li>
-								<li class="nav-item ">
-									<a class="nav-link"
-										href="#!">Cars
-									</a>
-								</li>
-								<li class="nav-item dropdown dropdown-slide @@dashboard">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-										href="#!">Dashboard<span><i class="fa fa-angle-down"></i></span>
-									</a>
-
-									<!-- Dropdown list -->
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item @@dashboardPage" href="dashboard.html">Dashboard</a>
-										</li>
-										<li><a class="dropdown-item @@dashboardMyAds"
-												href="dashboard-my-ads.html">My Cars</a></li>
-										<li><a class="dropdown-item @@dashboardFavouriteAds"
-												href="dashboard-favourite-ads.html"> Favourite Car</a></li>
-										<li class="dropdown dropdown-submenu dropright">
-											<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501"
-												role="button" data-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false">Sub Menu</a>
-
-											<ul class="dropdown-menu" aria-labelledby="dropdown0501">
-												<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-												<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="navbar-nav ml-auto mt-10">
-								<li class="nav-item">
-									<a class="nav-link login-button" href="login.html">Login</a>
-								</li>
-								<!-- <li class="nav-item">
-								<a class="nav-link text-white add-button" href="ad-listing.html"><i class="fa fa-plus-circle"></i> Add Listing</a>
-							</li> -->
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
+	<!--Header--> 
+<?php include('header.php');?>
+<!-- /Header --> 
 
 	<section class="login py-5 border-top-1">
 		<div class="container">
@@ -127,7 +57,7 @@
 					</div>
 					<button type="submit" class="btn btn-primary font-weight-bold mt-3">Log in</button>
 					<a class="mt-3 d-block text-primary" href="#!">Forget Password?</a>
-					<a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
+					<a class="mt-3 d-inline-block text-primary" href="register.php">Register Now</a>
 				  </fieldset>
 				</form>
 			  </div>

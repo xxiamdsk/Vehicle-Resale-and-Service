@@ -605,18 +605,18 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("https://media.architecturaldigest.com/photos/63079fc7b4858efb76814bd2/16:9/w_1600%2Cc_limit/9.%2520DeLorean-Alpha-5%2520%255BDeLorean%255D.jpg");
-  background-size: cover;
+  background: url(../images/kindpng_4950809.png);
   background-repeat: no-repeat;
+  background-size: 1349px 450px;
 }
 .bg-2 {
-  background: url(../images/subscription/subscription-back.jpg);
+  background: url(../images/sub scription/subscription-back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-3 {
-  background: url(../images/call-to-action/cta-background.jpg);
+  background: url(../images/kindpng_4950809.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
