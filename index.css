@@ -1,0 +1,203 @@
+.navbar{
+  background-color:rgb(255, 255, 255);
+} 
+
+.btn2{
+  border: none;
+  background-color: gold;
+  color: white;
+}
+.btn2:hover{
+  background-color: goldenrod;
+}
+.hello{
+  border-radius: 0%;
+  border-style: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: white;
+  color: black;
+}
+.hello:hover{
+  color: black;
+  border-radius: 0%; 
+  border-style: none;
+  border: 3px;
+  border-color: orangered;
+  border-bottom-style: solid;
+
+}
+.search{
+  margin-top: 40px;
+  width: 500px;
+  height: 40px;
+  border: .5px;
+  border-style: solid;
+  border-radius: 20px;
+}
+.navbar #log-btn i{
+  font-size: 1.5rem;
+
+  cursor: pointer;
+  display:inline;
+}
+
+.dropdown-menu{
+  border-style: none;
+  border-radius: 40px;
+  padding-top: 50px;
+  
+}
+.login{
+  color: white;
+  margin-left: 40px;
+  border-style: none;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: gold;
+}
+.login:hover{
+  background-color: goldenrod;
+  transition: 100ms;
+}
+.login-form{
+  margin-top: 100px;
+
+}
+
+
+.form{
+  padding: 50px;
+
+}
+#num{
+  border-style: none;
+}
+.items{
+  padding-top:20px;
+  padding-left: 10px;
+  list-style: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+ section{
+  margin-top:4rem;
+  padding: 2rem 9%;
+ }
+
+  /* Change the color of links on hover */
+  .nav-item a:hover {
+    border-bottom-style: solid; 
+    border-color: orangered;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .nav-item a.active {
+    border-bottom-style: solid;
+    
+    border-color: orangered;
+    color: black;
+  }
+  .logo {
+    
+     height: 60px;
+  }
+
+  .row{
+    padding-top: 50px;
+  }
+
+
+
+
+  .bestseller{
+    background: linear-gradient(to right, rgb(255, 255, 147),rgb(255, 199, 135))
+  }
+  
+  .home{
+    padding: top 10rem;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .home h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+
+  }
+  .img-fluid{
+    height: 500px;
+   width: 800px ;
+  }
+  
+  .home img{
+    width: 100%;
+  }
+  @keyframes brand-line{
+    from{transform:  translateY();}
+    50%{transform: translateY(30px);}
+    to{transform: translateY(30px);}    
+  }
+
+  @keyframes brand-img{
+    from{transform:  translateY();}
+    50%{transform: translateY(-50px);}
+    to{transform: translateY(-50px);}
+  }
+  
+  .brand-img:hover{
+    animation-name:brand-img;
+    animation-duration: 1s;
+    animation-delay: 10ms;
+    
+  }
+  .brand-line:hover{
+    animation-name: brand-line;
+    animation-duration: 1s;
+    animation-delay: 10ms;
+  }
+  #allcars{
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+  }
+  .allcars:hover{
+    font-weight: bolder;
+    
+    border-bottom-style: solid;
+    border-color: coral;
+    color: black;
+    transition: 200ms;
+  }
+
+
+@media(max-width:768px){
+    
+  .navbar #log-btn i{
+    padding-left: 1rem;
+    display: block;
+  }
+  
+  .navbar #log-btn .btn{
+    display: none;
+  }
+}
+
+@media(max-width:768px){
+  .signUp-img{
+    display: none;
+    }
+    .login-form{
+      margin-top: 40px;
+      
+    }
+    .search{
+      margin-top: 40px;
+      width: 200px;
+      height: 40px;
+      border: .5px;
+      border-style: solid;
+      border-radius: 20px;
+    }
+  }
