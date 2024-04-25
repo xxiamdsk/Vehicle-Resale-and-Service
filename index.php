@@ -14,11 +14,9 @@
 	<meta name="author" content="Themefisher">
 	<meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
-	<!-- theme meta -->
-	<meta name="theme-name" content="classimax" />
 
 	<!-- favicon -->
-	<!-- <link href="images/favicon.png" rel="shortcut icon"> -->
+	<link href="images/wheelXchange(1).png" rel="shortcut icon">
 
 	<!-- 
   Essential stylesheets
@@ -370,6 +368,82 @@
 		<!-- Container End -->
 	</section>
 
+<!--==========================================
+=           Buy in ease Section            =
+===========================================-->
+
+<section class="popular-deals section bg-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<h2>Buy in 3 Easy Steps</h2>
+						<p>How it Works</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="trending-ads-slide">
+						<div class="col-sm-12 col-lg-4">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+									<div class="price">1.</div>
+										<a href="">
+											<img class="card-img-top img-fluid"
+												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title" style="text-align: center;"><a href="single.html" >Find the Perfect Car</a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+									<div class="price">2.</div>
+										<a href="">
+											<img class="card-img-top img-fluid"
+												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title" style="text-align: center;"><a href="single.html">Test Drive at CARS23 Hub</a></h4>
+									</div>
+								</div>
+							</div>
+						</div><div class="col-sm-12 col-lg-4">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+									<div class="price">3.</div>
+										<a href="">
+											<img class="card-img-top img-fluid"
+												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title" style="text-align: center;"><a href="single.html">Buy it Your Own Way</a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!--====================================
 =            Call to Action            =
