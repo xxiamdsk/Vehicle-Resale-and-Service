@@ -1,4 +1,4 @@
-<footer class="footer section section-sm" style=" height: 450px; border-radius: 50px 50px 0px 0px;">
+<footer class="footer section section-sm" style=" height: 450px; border-radius: 70px 70px 0px 0px;">
 		<!-- Container Start -->
 		<div class="container">
 			<div class="row">

@@ -1,3 +1,35 @@
+<?php
+// Start a PHP session
+session_start();
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if the email and password are provided
+    if (isset($_POST['email']) && isset($_POST['passwd'])) {
+        // Validate the email and password (you should do proper validation and sanitization here)
+        $email = $_POST['email'];
+        $passwd = $_POST['passwd'];
+		include_once 'config.php';
+		$sql = "SELECT * FROM customer WHERE email = '$email' AND pswd = '$passwd'";
+		$result = $conn->query($sql);
+		// Check if user exists and credentials are correct
+		if ($result->num_rows == 1) {
+			// User found, set session variables
+			$_SESSION['email'] = $email;
+	
+			// Redirect to a secure page after successful login
+			header("Location: index.php");
+			exit();
+		} else {
+			// User not found or incorrect credentials, display error message
+			$error = "Invalid email or password";
+		}
+	
+		// Close database connection
+		$conn->close();
+	}}
+
+	?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,15 +79,15 @@
 			<div class="col-lg-5 col-md-8 align-item-center">
 			  <div class="border">
 				<h3 class="bg-gray p-4">Login Now</h3>
-				<form action="#">
+				<form method="POST" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 				  <fieldset class="p-4">
-					<input class="form-control mb-3" type="text" placeholder="Username" required>
-					<input class="form-control mb-3" type="password" placeholder="Password" required>
+					<input class="form-control mb-3" type="text" name="email" placeholder="Username" required>
+					<input class="form-control mb-3" type="password" name="passwd" placeholder="Password" required>
 					<div class="loggedin-forgot">
 					  <input type="checkbox" id="keep-me-logged-in">
 					  <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
 					</div>
-					<button type="submit" class="btn btn-primary font-weight-bold mt-3">Log in</button>
+					<button type="submit" name="login" value="login" class="btn btn-primary font-weight-bold mt-3">Log in</button>
 					<a class="mt-3 d-block text-primary" href="#!">Forget Password?</a>
 					<a class="mt-3 d-inline-block text-primary" href="register.php">Register Now</a>
 				  </fieldset>
@@ -66,113 +98,9 @@
 		</div>
 	  </section>
 
-  	<!--============================
-=            Footer            =
-=============================-->
-
-	<footer class="footer section section-sm">
-		<!-- Container Start -->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0 mb-4 mb-lg-0">
-					<!-- About -->
-					<div class="block about">
-						<!-- footer logo -->
-						<img src="images/wheelXchange(1).png" alt="logo" style="height: 40px ; width: 150px;" >
-						<!-- description -->
-						<p class="alt-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco
-							laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-				</div>
-				<!-- Link list -->
-				<div class="col-lg-2 offset-lg-1 col-md-3 col-6 mb-4 mb-lg-0">
-					<div class="block">
-						<h4>Information</h4>
-						<ul>
-							<li><a href="dashboard-my-ads.html">Purchase</a></li>
-							<li><a href="dashboard-favourite-ads.html">Payment</a></li>
-							<li><a href="dashboard-archived-ads.html">Shipping</a></li>
-							<li><a href="dashboard-pending-ads.html">Return</a></li>
-							<li><a href="dashboard-all-ads.html">FAQ</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Link list -->
-				<div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0 col-6 mb-4 mb-md-0">
-					<div class="block">
-						<h4>Top Brands</h4>
-						<ul>
-							<li><a href="category.html">BMW</a></li>
-							<li><a href="single.html">Chevrolet </a></li>
-							<li><a href="store.html">Ferrari</a></li>
-							<li><a href="single-blog.html"> Honda</a>
-							</li>
-							<li><a href="blog.html">Blog</a></li>
-
-
-
-						</ul>
-					</div>
-				</div>
-				<!-- Promotion -->
-				<div class="col-lg-4 col-md-7">
-					<!-- App promotion -->
-					<div class="block-2 app-promotion">
-						<div class="mobile d-flex  align-items-center">
-							<a href="index.html">
-								<!-- Icon -->
-								<img src="images/footer/phone-icon.png" alt="mobile-icon">
-							</a>
-							<p class="mb-0">Get the Dealsy Mobile App and Save more</p>
-						</div>
-						<div class="download-btn d-flex my-3">
-							<a href="index.html"><img src="images/apps/google-play-store.png" class="img-fluid"
-									alt=""></a>
-							<a href="index.html" class=" ml-3"><img src="images/apps/apple-app-store.png"
-									class="img-fluid" alt=""></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Container End -->
-	</footer>
-	<!-- Footer Bottom -->
-	<footer class="footer-bottom">
-		<!-- Container Start -->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 text-center text-lg-left mb-3 mb-lg-0">
-					<!-- Copyright -->
-					<div class="copyright">
-						<p>Copyright &copy;
-							<script>
-								var CurrentYear = new Date().getFullYear()
-								document.write(CurrentYear)
-							</script>. Designed & Developed by <a class="text-white" href="">Team </a>
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<!-- Social Icons -->
-					<ul class="social-media-icons text-center text-lg-right">
-						<li><a class="fa fa-facebook" href=""></a></li>
-						<li><a class="fa fa-twitter" href=""></a></li>
-						<li><a class="fa fa-pinterest-p" href=""></a></li>
-						<li><a class="fa fa-github-alt" href=""></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Container End -->
-		<!-- To Top -->
-		<div class="scroll-top-to">
-			<i class="fa fa-angle-up"></i>
-		</div>
-	</footer>
+<!-- ========================================== -->
+	<!-- Footer -->
+	<?php include ('footer.php'); ?>
 
 
 	<!-- 
