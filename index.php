@@ -35,9 +35,9 @@
 <body class="body-wrapper">
 
 
-<!--Header--> 
-<?php include('header.php');?>
-<!-- /Header --> 
+	<!--Header-->
+	<?php include ('header.php'); ?>
+	<!-- /Header -->
 
 	<!--===============================
 =            Hero Area            =
@@ -118,7 +118,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-title">
-						<h2>Featured Cars</h2>
+					<h2 style="font-weight: 800;">Featured Car</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, magnam.</p>
 					</div>
 				</div>
@@ -294,7 +294,7 @@
 	</section>
 
 
-<!--==========================================
+	<!--==========================================
 =           Service Section            =
 ===========================================-->
 
@@ -314,8 +314,8 @@
 						<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
 							<div class="category-block">
 								<div class="header">
-									<!-- <i class="fa fa-car icon-bg-1"></i> -->
-									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQezUAHeqhr9xK_QGFZbBU09vak9rh6oqIiOIQM18Z5dQ&s" style="height: 58px; width: 58px;" alt="" srcset="">
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQezUAHeqhr9xK_QGFZbBU09vak9rh6oqIiOIQM18Z5dQ&s"
+										style="height: 58px; width: 58px;" alt="" srcset="">
 									<h4>Selling a Car</h4>
 								</div>
 								<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
@@ -323,39 +323,38 @@
 							
 						</div> <!-- /Category List -->
 						<!-- Category list -->
-						<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-							<div class="category-block">
-								<div class="header">
-									<!-- <i class="fa fa-car icon-bg-1"></i> -->
-									<img src="https://themewagon.github.io/hvac/img/services/services-2.png" alt="" srcset="">
+						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
+								<div class="category-block">
+									<div class="header">
+										<img src="https://themewagon.github.io/hvac/img/services/services-2.png" alt=""
+											srcset="">
 
-									<h4>Buying a Car</h4>
-								</div>
-								<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+										<h4>Buying a Car</h4>
+									</div>
+									<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
 							</div>
 						</div> <!-- /Category List -->
 						<!-- Category list -->
-						<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-							<div class="category-block">
-								<div class="header">
-									<!-- <i class="fa fa-car icon-bg-1"></i> -->
-									<img src="https://themewagon.github.io/hvac/img/services/services-3.png" alt="" srcset="">
+						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
+									<div class="category-block">
+										<div class="header">
+											<img src="https://themewagon.github.io/hvac/img/services/services-3.png"
+												alt="" srcset="">
 
-									<h4>Car Maintenance</h4>
-								</div>
-								<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+											<h4>Car Maintenance</h4>
+										</div>
+										<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
 							</div>
 						</div> <!-- /Category List -->
 						<!-- Category list -->
-						<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-							<div class="category-block">
-								<div class="header">
-									<!-- <i class="fa fa-car icon-bg-1"></i> -->
-									<img src="https://themewagon.github.io/hvac/img/services/services-4.png" alt="" srcset="">
-
-									<h4>Support 24/7</h4>
-								</div>
-								<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
+										<div class="category-block">
+											<div class="header">
+												<img src="https://themewagon.github.io/hvac/img/services/services-4.png"
+													alt="" srcset="">
+												<h4>Support 24/7</h4>
+											</div>
+											<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
 							</div>
 						</div> <!-- /Category List -->
 						
@@ -368,94 +367,107 @@
 		<!-- Container End -->
 	</section>
 
-<!--==========================================
-=           Buy in ease Section            =
-===========================================-->
+		<!--==========================================
+		=           Buy in ease Section            =
+		===========================================-->
 
-<section class="popular-deals section bg-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title">
-						<h2>Buy in 3 Easy Steps</h2>
-						<p>How it Works</p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="trending-ads-slide">
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-									<div class="price">1.</div>
-										<a href="">
-											<img class="card-img-top img-fluid"
-												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title" style="text-align: center;"><a href="single.html" >Find the Perfect Car</a></h4>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-									<div class="price">2.</div>
-										<a href="">
-											<img class="card-img-top img-fluid"
-												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title" style="text-align: center;"><a href="single.html">Test Drive at CARS23 Hub</a></h4>
-									</div>
-								</div>
-							</div>
-						</div><div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-									<div class="price">3.</div>
-										<a href="">
-											<img class="card-img-top img-fluid"
-												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title" style="text-align: center;"><a href="single.html">Buy it Your Own Way</a></h4>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<section class=" popular-deals section bg-gray">
+											<div class="container">
+												<div class="row">
+													<div class="col-md-12">
+														<div class="section-title">
+														<h2 style="font-weight: 800;">Buy in 3 Easy Steps</h2>
+															<p>How it Works</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="trending-ads-slide">
+															<div class="col-sm-12 col-lg-4">
+																<!-- product card -->
+																<div class="product-item bg-light">
+																	<div class="card">
+																		<div class="thumb-content">
+																			<div class="price">1.</div>
+																			<a href="">
+																				<img class="card-img-top img-fluid"
+																					src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+																					alt="Card image cap">
+																			</a>
+																		</div>
+																		<div class="card-body">
+																			<h4 class="card-title"
+																				style="text-align: center;"><a
+																					href="single.html">Find the Perfect
+																					Car</a></h4>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-sm-12 col-lg-4">
+																<!-- product card -->
+																<div class="product-item bg-light">
+																	<div class="card">
+																		<div class="thumb-content">
+																			<div class="price">2.</div>
+																			<a href="">
+																				<img class="card-img-top img-fluid"
+																					src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+																					alt="Card image cap">
+																			</a>
+																		</div>
+																		<div class="card-body">
+																			<h4 class="card-title"
+																				style="text-align: center;"><a
+																					href="single.html">Test Drive at
+																					CARS23 Hub</a></h4>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-sm-12 col-lg-4">
+																<!-- product card -->
+																<div class="product-item bg-light">
+																	<div class="card">
+																		<div class="thumb-content">
+																			<div class="price">3.</div>
+																			<a href="">
+																				<img class="card-img-top img-fluid"
+																					src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+																					alt="Card image cap">
+																			</a>
+																		</div>
+																		<div class="card-body">
+																			<h4 class="card-title"
+																				style="text-align: center;"><a
+																					href="single.html">Buy it Your Own
+																					Way</a></h4>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 	</section>
+
+
 
 	<!--====================================
 =            Call to Action            =
 =====================================-->
 
-	<section class="call-to-action overly bg-3 section-sm">
+	<section class="call-to-action overly bg-3 call-section-sm" >
 		<!-- Container Start -->
 		<div class="container">
 			<div class="row justify-content-md-center text-center">
 				<div class="col-md-8">
 					<div class="content-holder">
-						<h2>Explore our fleet of vehicles and reserve your preferred model today, then schedule your service appointment with just a few clicks!</h2>
+						<h2>Explore our fleet of vehicles and reserve your preferred model today, then schedule your
+							service appointment with just a few clicks!</h2>
 						<ul class="list-inline mt-30">
 							<li class="list-inline-item"><a class="btn btn-main" href="service.php">Book a Service</a>
 							</li>
@@ -469,9 +481,13 @@
 		<!-- Container End -->
 	</section>
 
+
+
+	
+
 	<!-- ========================================== -->
 	<!-- Footer -->
-	<?php include('footer.php');?>
+	<?php include ('footer.php'); ?>
 
 	<!-- 
 Essential Scripts

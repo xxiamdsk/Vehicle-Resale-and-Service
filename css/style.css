@@ -307,8 +307,9 @@ button {
   padding: 100px 0;
 }
 
-.section-sm {
-  padding: 70px 0;
+.call-section-sm {
+  padding: 100px 0;
+  margin-bottom: 140px;
 }
 
 .section-title {
@@ -628,6 +629,7 @@ ul.pagination .active a {
 
 .login-button {
   border: 2px solid #dedede;
+  
   margin-right: 8px;
   padding: 6px 20px !important;
 }
@@ -2172,7 +2174,8 @@ form textarea {
 }
 
 .footer {
-  background: #232425;
+  /* background: #232425; */
+  background-image: url(../images/footer-bg.jpg);
 }
 .footer .block h4 {
   color: #fff;
@@ -2223,36 +2226,40 @@ form textarea {
   color: #5672f9;
 }
 
-.footer-bottom {
-  position: relative;
-  background: #363839;
-  padding: 25px 0;
+.footer {
+  /* position: relative; */
+  /* background: #363839; */
+  background-image: url(../images/footer-bg.jpg);
+  /* max-width: 100%; */
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
 }
 @media (max-width: 480px) {
-  .footer-bottom {
+  .footer {
     text-align: center;
   }
 }
-.footer-bottom .copyright p {
+.footer .copyright p {
   color: #c7c7c7;
   margin-bottom: 0;
 }
-.footer-bottom .social-media-icons {
+.footer .social-media-icons {
   margin-right: -20px;
 }
 @media (max-width: 992px) {
-  .footer-bottom .social-media-icons {
+  .footer .social-media-icons {
     margin-right: 0;
   }
 }
-.footer-bottom .social-media-icons li {
+.footer .social-media-icons li {
   display: inline-block;
 }
-.footer-bottom .social-media-icons li a {
+.footer .social-media-icons li a {
   color: #848484;
   padding: 0 20px;
 }
-.footer-bottom .social-media-icons li a:hover {
+.footer .social-media-icons li a:hover {
   color: #fff !important;
   text-decoration: none;
 }
