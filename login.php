@@ -13,9 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$result = $conn->query($sql);
 		// Check if user exists and credentials are correct
 		if ($result->num_rows == 1) {
+			$sql = "SELECT name FROM customer WHERE email = '$email'";
+			$result = $conn->query($sql);
+
 			// User found, set session variables
 			$_SESSION['email'] = $email;
-	
+			$_SESSION['name'] = $result->fetch_assoc()['name'];
+
 			// Redirect to a secure page after successful login
 			header("Location: index.php");
 			exit();
