@@ -50,7 +50,7 @@ error_reporting(0);
 =            Hero Area            =
 ================================-->
 
-	<section class="hero-area bg-1 text-center overly">
+	<section class="hero-area bg-1 text-center ">
 		<!-- Container Start -->
 		<div class="container">
 			<div class="row">

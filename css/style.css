@@ -362,7 +362,7 @@ button {
 }
 .overly:before {
   content: "";
-  background: rgba(0, 0, 0, 0.51);
+  /* background: rgba(0, 0, 0, 0.51); */
   position: absolute;
   top: 0;
   left: 0;
@@ -600,7 +600,7 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url(../images/kindpng_4950809.png);
+  background: url(../images/hero1.png);
   background-repeat: no-repeat;
   background-size: 1349px 450px;
 }
