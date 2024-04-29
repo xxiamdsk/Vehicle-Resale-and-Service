@@ -1,3 +1,50 @@
+<?php
+session_start(); // Start PHP session
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
+    // Database connection parameters
+    $servername = "localhost"; // Change this to your database server name
+    $username = "root"; // Change this to your database username
+    $password = ""; // Change this to your database password
+    $dbname = "vrs"; // Change this to your database name
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Get user input (email and password) and sanitize them
+    $email = $_POST['email'];
+    $passwd = $_POST['passwd']; // You should hash the password before storing it in the database
+echo $passwd;
+
+    // SQL query to insert new user into database
+    $sql = "INSERT INTO customer (email, pswd) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $passwd);
+    
+    if ($stmt->execute()) {
+        // Registration successful, set session variables
+        $_SESSION['email'] = $email;
+
+        // Redirect to a secure page after successful registration
+        header("Location: index.php");
+        exit();
+    } else {
+        // Registration failed, display an error message
+        $error = "Registration failed";
+    }
+
+    // Close database connection
+    $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,11 +94,11 @@
         <div class="col-lg-5 col-md-8 align-item-center">
           <div class="border border">
             <h3 class="bg-gray p-4">Register Now</h3>
-            <form action="#">
+            <form method="POST" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
               <fieldset class="p-4">
-                <input class="form-control mb-3" type="email" placeholder="Email*" required>
-                <input class="form-control mb-3" type="password" placeholder="Password*" required>
-                <input class="form-control mb-3" type="password" placeholder="Confirm Password*" required>
+                <input class="form-control mb-3" type="email" name="email" placeholder="Email*" required>
+                <input class="form-control mb-3" type="password" name="passwd" placeholder="Password*" required>
+                <input class="form-control mb-3" type="password" name="cpasswd" placeholder="Confirm Password*" required>
                 <div class="loggedin-forgot d-inline-flex my-3">
                   <input type="checkbox" id="registering" class="mt-1">
                   <label for="registering" class="px-2">By registering, you accept our <a class="text-primary font-weight-bold" href="terms-condition.html">Terms & Conditions</a></label>

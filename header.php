@@ -62,24 +62,31 @@
                         </ul>
                         
                         <?php        
-                        if ($_SESSION['email'] == null){
-                            echo "Hello User" . $_SESSION['email'];
+                        if (isset($_SESSION['email'])){
+                            echo "Hello" . $_SESSION['email'];
                             ?>
                             <ul class="navbar-nav ml-auto mt-10">
                                 <li class="nav-item">
-                                    <a class="nav-link login-button" href="login.php">Login</a>
+                                    <a class="nav-link login-button" href="logout.php">logout</a>
                                 </li>
                             </ul>
                             <?php }
                         else {
-                            echo "Welcome: " . $_SESSION['email'];
-                            echo '<ul class="navbar-nav ml-auto mt-10">';
-                            echo '<li class="nav-item">';
-                            echo '   <a class="nav-link login-button" href="logout.php">Logout</a>';
-                            echo '</li>';
-                            echo  '</ul>';
+                            ?>
+                            <ul class="navbar-nav ml-auto mt-10">
+                                <li class="nav-item">
+                                    <a class="nav-link login-button" href="login.php">login</a>
+                                </li>
+                            </ul>
+                        <?php    
                         }
                         ?>
+                        
+                        
+                    
+
+
+
                     </div>
                 </nav>
             </div>
