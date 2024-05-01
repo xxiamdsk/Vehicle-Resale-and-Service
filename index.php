@@ -50,7 +50,7 @@ error_reporting(0);
 =            Hero Area            =
 ================================-->
 
-	<section class="hero-area bg-1 text-center ">
+	<section class="hero-area bg-1 text-center " >
 		<!-- Container Start -->
 		<div class="container">
 			<div class="row">
@@ -58,9 +58,9 @@ error_reporting(0);
 					<!-- Header Contetnt -->
 					<div class="content-block">
 						<h1>Buy & Sell Near You </h1>
-						<p>Join the millions who buy and sell from each other <br> everyday in local communities around
-							the world</p>
-						<div class="short-popular-category-list text-center">
+						<!-- <p>Join the millions who buy and sell from each other <br> everyday in local communities around
+							the world</p> -->
+						<!-- <div class="short-popular-category-list text-center">
 							<h2>Popular Category</h2>
 							<ul class="list-inline">
 								<li class="list-inline-item">
@@ -73,7 +73,7 @@ error_reporting(0);
 									<a href="Service.php"><i class="fa fa-cogs"></i> Service Center</a>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 
 					</div>
 					<!-- Advance Search -->
