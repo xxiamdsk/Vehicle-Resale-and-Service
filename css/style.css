@@ -259,7 +259,6 @@ a:hover {
   color: #ffffff;
   box-shadow: none;
   font-size: 15px;
-
 }
 
 .form-control:focus {
@@ -672,7 +671,7 @@ ul.pagination .active a {
 }
 
 .bg-2 {
-  background: url(../images/sub scription/subscription-back.jpg);
+  background: url(../images/subscription/subscription-back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
