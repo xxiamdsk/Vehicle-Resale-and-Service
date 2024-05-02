@@ -5,7 +5,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the email and password are provided
     if (isset($_POST['email']) && isset($_POST['passwd'])) {
-        // Validate the email and password (you should do proper validation and sanitization here)
+        // Validate the email and password 
         $email = $_POST['email'];
         $passwd = $_POST['passwd'];
 		include_once 'config.php';
@@ -23,7 +23,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// Redirect to a secure page after successful login
 			header("Location: index.php");
 			exit();
-		} else {
+		}
+
+		// Check if the user is an admin
+        // $sql = "SELECT * FROM admin WHERE email = '$email' AND pswd = '$password'";
+        // $result = $conn->query($sql);
+        // if ($result->num_rows == 1) {
+        //     // If the user is an admin, set session variables and redirect to admin dashboard
+        //     $_SESSION['user_type'] = 'admin';
+        //     $_SESSION['email'] = $email;
+        //     header("Location: admin/");
+        //     exit();
+        // }
+
+
+		// Check if the user is an admin
+        if ($email=='admin@gmail.com' && $passwd=='admin') {
+            // If the user is an admin, set session variables and redirect to admin dashboard
+            $_SESSION['email'] = $email;
+            $_SESSION['name'] = "Admin";
+            header("Location: admin/dashboard.php");
+            exit();
+        }
+
+		
+	
+
+		 
+		else {
 			// User not found or incorrect credentials, display error message
 			$error = "Invalid email or password";
 		}

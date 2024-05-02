@@ -256,7 +256,7 @@ a:hover {
   border-radius: 2px;
   height: 50px;
   background-color: transparent;
-  color: #ffffff;
+  color: #666;
   box-shadow: none;
   font-size: 15px;
 }
@@ -963,7 +963,7 @@ ul.pagination .active a {
 }
 
 .hero-area .advance-search {
-  background: #e2eaeb;
+  background: #ffffff;
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
   margin-bottom: -50px;
