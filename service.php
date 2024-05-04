@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-include('config.php');
+include ('config.php');
 error_reporting(0);
 
 ?><!DOCTYPE html>
@@ -44,6 +44,87 @@ error_reporting(0);
   <!--Header-->
   <?php include ('header.php'); ?>
   <!-- /Header -->
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\wheels.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Wheels</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\engine.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Engine</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\car-oil.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Car Oiling</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\car-painting.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Car Painting</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\air-conditioner.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">AC Service</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\window.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Windshields</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\vehicle.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Cleaning</p>
+            </div>
+        </div>
+        <div class="col " style="padding-bottom: 15px;">
+          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
+              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
+            <img src="images\service logos\protection.png" alt="" srcset=""  width="150" height="144" class="center"  >
+          </div>
+          <div class="card-body">
+              <p class="card-text">Full Service</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 
   <section class="advt-post bg-gray py-5">

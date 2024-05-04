@@ -612,6 +612,15 @@ ul.pagination .active a {
   border-color: transparent !important;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+
+}
+
+
 .nice-select .list {
   width: 100%;
 }
@@ -668,6 +677,22 @@ ul.pagination .active a {
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: 1700px 360px;
+}
+.bg-1:hover {
+  /* zoom only background */
+  animation: zoom-in-out 1s ;
+}
+
+@keyframes zoom-in-out {
+  0% {
+    background-size: 1700px 360px;
+  }
+  50% {
+    background-size: 1800px 380px;
+  }
+  100% {
+    background-size: 1700px 360px;
+  }
 }
 
 .bg-2 {
@@ -931,6 +956,24 @@ ul.pagination .active a {
   letter-spacing: 0.05em;
   margin-bottom: 15px;
 }
+
+.hero-area .content-block h1:hover
+{
+  animation: normal 1s;
+}
+
+@keyframes normal {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 @media (max-width: 768px) {
 

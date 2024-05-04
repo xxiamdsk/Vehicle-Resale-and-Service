@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // If the user is an admin, set session variables and redirect to admin dashboard
             $_SESSION['email'] = $email;
             $_SESSION['name'] = "Admin";
-            header("Location: admin/dashboard.php");
+            header("Location: admin.php");
             exit();
         }
 
