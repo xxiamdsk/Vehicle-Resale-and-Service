@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-include('config.php');
+include ('../config.php');
 error_reporting(0);
 
 ?>
@@ -12,14 +12,14 @@ error_reporting(0);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- Bootstrap CSS -->
-	<link href="../plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link href="../plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
-	<link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="../plugins/slick/slick.css" rel="stylesheet">
-	<link href="../plugins/slick/slick-theme.css" rel="stylesheet">
-	<link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
+    <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../plugins/slick/slick.css" rel="stylesheet">
+    <link href="../plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 
-	<link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -40,7 +40,8 @@ error_reporting(0);
 
         /* Main content area */
         .main-content {
-            margin-left: 300px; /* Same width as sidebar */
+            margin-left: 300px;
+            /* Same width as sidebar */
             padding: 20px;
         }
     </style>
@@ -48,94 +49,64 @@ error_reporting(0);
 
 <body>
 
-<!-- header -->
-<?php include('header.php');?>
-<!-- header -->
+    <!-- header -->
+    <?php include ('header.php'); ?>
+    <!-- header -->
 
     <!-- Sidebar -->
-    <div class="sidebar bg-light">
-        <div class="container">
-            <h2 class="text-center">Admin Dashboard</h2>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="admin.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                </li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-cogs"></i> Brand</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-car"></i> Vechiles</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-users"></i> Manage Booking</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="users.php"><i class="fas fa-user"></i> Users</a>
-				</li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-file-text"></i> Manage Pages</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-cog"></i> Update Contact Info.</a>
-                </li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-				</li>
+    <?php include ('leftbar.php'); ?>
+    <!-- Sidebar -->
 
-            </ul>
-        </div>
-    </div>
-
-			<<!-- Main content -->
-<div class="main-content">
-    <div class="container">
-        <h2>Welcome to the Admin Dashboard</h2>
-        <p>This is the main content area.</p>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title 1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <<!-- Main content -->
+        <div class="main-content">
+            <div class="container">
+                <h2>Welcome to the Admin Dashboard</h2>
+                <p>This is the main content area.</p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Users</h5>
+                                <span><i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                                <p class="card-text">
+                                    <?php
+                                    // Query to count the number of users in the customer table
+                                    $query = "SELECT * FROM customer";
+                                    $result = mysqli_query($conn, $query);
+                                    $num_rows = mysqli_num_rows($result);
+                                    echo $num_rows;
+                                    ?>
+                                </p></span>
+                                <a href="users.php" class="btn btn-primary">Users</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title 2</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title 3</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title 4</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cars</h5>
+                                <span><i class="fa fa-car fa-3x" aria-hidden="true"></i>
+                                <p class="card-text">
+                                    <?php
+                                    // Query to count the number of users in the customer table
+                                    $query = "SELECT * FROM cars";
+                                    $result = mysqli_query($conn, $query);
+                                    $num_rows = mysqli_num_rows($result);
+                                    echo $num_rows;
+                                    ?>
+                                </p></span>
+                                <a href="cars.php" class="btn btn-primary">Cars</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

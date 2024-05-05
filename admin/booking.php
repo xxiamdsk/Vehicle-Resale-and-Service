@@ -87,51 +87,49 @@ error_reporting(0);
 
     <!-- Main content -->
     <div class="user-details">
-        <h1>Users</h1>
-
+        <h1>Booking</h1>
+        <!-- <a href="add-brand.php" class="btn btn-primary">Add Brand</a> -->
         <table>
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Phone No.</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Fetch data from the database and display in the table -->
-                <?php
-                // SQL query to select data from the customer table
-                $sql = "SELECT * FROM customer";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        ?>
-                        <tr>
-                            <td><?php echo $row['uid']; ?></td>
-                            <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['pswd']; ?></td>
-                            <td><?php echo $row['ph_no']; ?></td>
-                            <td><?php echo $row['address']; ?></td>
-                            <td>
-                                <a href="#" style="padding-right: 10px;"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#"><i class="fas fa-eraser"></i> </a>
-                            </td>
-                        </tr>
-                        <?php
-                    }
-                } else {
-                    echo "<tr>
-                    <td colspan='12'>No customers found</td>
-                </tr>";
+            <tr>
+                <th>b_no</th>
+                <th>resg_no</th>
+                <th>uid</th>
+                <th>brand</th>
+                <th>model</th>
+                <th>sc_id</th>
+                <th>amount</th>
+                <th>location</th>
+                <th>date</th>
+                <th>status</th>
+                <th>Action</th>
+            </tr>
+            <?php
+            // select only DISTINCT brand and model from cars table 
+            $sql = "SELECT * FROM booking ";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['b_no']; ?></td>
+                        <td><?php echo $row['resg_no']; ?></td>
+                        <td><?php echo $row['uid']; ?></td>
+                        <td><?php echo $row['brand']; ?></td>
+                        <td><?php echo $row['model']; ?></td>
+                        <td><?php echo $row['sc_id']; ?></td>
+                        <td><?php echo $row['amount']; ?></td>
+                        <td><?php echo $row['location']; ?></td>
+                        <td><?php echo $row['date']; ?></td>
+                        <td><?php echo $row['status']; ?></td>
+                        <td>
+                            <a href="#" style="padding-right: 10px;"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#"><i class="fas fa-eraser"></i> </a>
+                        </td>
+                    </tr>
+                    <?php
                 }
-                ?>
-            </tbody>
+            }
+            ?>
         </table>
     </div>
 

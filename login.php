@@ -20,8 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$_SESSION['email'] = $email;
 			$_SESSION['name'] = $result->fetch_assoc()['name'];
 
-			// Redirect to a secure page after successful login
-			header("Location: index.php");
+			// Redirect to current page after successful login
 			exit();
 		}
 
@@ -43,6 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $email;
             $_SESSION['name'] = "Admin";
             header("Location: admin/admin.php");
+            exit();
+        }
+		// check if the user is a service center owner
+        if ($email=='sc@gmail.com' && $passwd=='sc') {
+            // If the user is an admin, set session variables and redirect to admin dashboard
+            $_SESSION['email'] = $email;
+            $_SESSION['name'] = "SC Owner";
+            header("Location: service_center/sc_owner.php");
             exit();
         }
 		else {

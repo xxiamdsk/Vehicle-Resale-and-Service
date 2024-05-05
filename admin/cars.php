@@ -87,51 +87,62 @@ error_reporting(0);
 
     <!-- Main content -->
     <div class="user-details">
-        <h1>Users</h1>
+    <h1>Cars</h1>
 
         <table>
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Phone No.</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Fetch data from the database and display in the table -->
-                <?php
-                // SQL query to select data from the customer table
-                $sql = "SELECT * FROM customer";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        ?>
-                        <tr>
-                            <td><?php echo $row['uid']; ?></td>
-                            <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['pswd']; ?></td>
-                            <td><?php echo $row['ph_no']; ?></td>
-                            <td><?php echo $row['address']; ?></td>
-                            <td>
+            <tr>
+                <th>Insp No</th>
+                <th>Reg No</th>
+                <th>UID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Kms</th>
+                <th>Location</th>
+                <th>Inspection</th>
+                <th>Result</th>
+                <th>Action</th>
+            </tr>
+            <!-- Fetch data from the database and display in the table -->
+            <?php
+            // SQL query to select data from the customer table
+            $sql = "SELECT * FROM cars";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                // Output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row["insp_no"]; ?></td>
+                        <td><?php echo $row["resg_no"]; ?></td>
+                        <td><?php echo $row["uid"]; ?></td>
+                        <td><?php echo $row["brand"]; ?></td>
+                        <td><?php echo $row["model"]; ?></td>
+                        <td><?php echo $row["price"]; ?></td>
+                        <td><?php echo $row["date"]; ?></td>
+                        <td><?php echo $row["kms"]; ?></td>
+                        <td><?php echo $row["location"]; ?></td>
+                        <td><?php echo $row["inspection"]; ?></td>
+                        <td><?php echo $row["result"]; ?></td>
+                        <td>
                                 <a href="#" style="padding-right: 10px;"><i class="fas fa-pencil-alt"></i></a>
                                 <a href="#"><i class="fas fa-eraser"></i> </a>
                             </td>
-                        </tr>
-                        <?php
-                    }
-                } else {
-                    echo "<tr>
-                    <td colspan='12'>No customers found</td>
-                </tr>";
+                        </td>
+                    </tr>
+                    <?php
+
                 }
-                ?>
-            </tbody>
+            } else {
+                echo "<tr>
+    <td colspan='12'>No customers found</td>
+</tr>";
+            }
+            ?>
+
+
         </table>
     </div>
 
