@@ -1,9 +1,4 @@
-/**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
- */
+
 
 (function ($) {
   'use strict';
@@ -62,16 +57,11 @@
     }, 500);
     return false;
   });
-    
-  // -----------------------------
-  //  Video Replace
-  // -----------------------------
-  $('.video-box').click(function () {
-    var video = '<div class="embed-responsive embed-responsive-16by9 mb-4"><iframe class="embed-responsive-item" src="' + $(this).attr('data-video-url') + '" allowfullscreen></iframe></div>';
-    $(this).parent('.video').replaceWith(video);
-  });
 
-  // niceSelect
+
+    
+
+
 
   $('select:not(.ignore)').niceSelect();
 
@@ -119,9 +109,7 @@
         arrows: false
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+
     ]
   });
 
@@ -157,9 +145,7 @@
         slidesToScroll: 1
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+    
     ]
   });
 

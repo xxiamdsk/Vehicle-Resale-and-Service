@@ -2,8 +2,8 @@
 session_start();
 include ('config.php');
 error_reporting(0);
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,9 +34,7 @@ error_reporting(0);
   <link href="plugins/slick/slick.css" rel="stylesheet">
   <link href="plugins/slick/slick-theme.css" rel="stylesheet">
   <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-
   <link href="css/style.css" rel="stylesheet">
-
 </head>
 
 <body class="body-wrapper">
@@ -45,80 +43,96 @@ error_reporting(0);
   <?php include ('header.php'); ?>
   <!-- /Header -->
 
-  <div class="album py-5 bg-body-tertiary">
+  <div class="album pt-4 pb-4 bg-2 overly">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 content-block pb-3">
+          <h1 class="text-center service" style="font-weight:bold; color:white">Car Service</h1>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\wheels.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Wheels</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top card-img-bottom" width="242" height="151">
+              <img src="images\service logos\wheels.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Wheels</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\engine.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Engine</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\engine.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Engine</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\car-oil.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Car Oiling</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\car-oil.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Car Oiling</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\car-painting.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Car Painting</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\car-painting.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Car Painting</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\air-conditioner.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">AC Service</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\air-conditioner.png" alt="" srcset="" width="150" height="144"
+                class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">AC Service</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\window.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Windshields</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\window.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Windshields</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\vehicle.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Cleaning</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\vehicle.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Cleaning</p>
+          </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" >
-            <img src="images\service logos\protection.png" alt="" srcset=""  width="150" height="144" class="center"  >
-          </div>
-          <div class="card-body">
-              <p class="card-text">Full Service</p>
+          <a href="#form">
+            <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
+              <img src="images\service logos\protection.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 800; font-size:20px;">Full Service</p>
+          </div>
         </div>
       </div>
     </div>
@@ -129,10 +143,9 @@ error_reporting(0);
 
   <section class="advt-post bg-gray py-5">
     <div class="container">
-      <form action="#!" method="POST">
+      <form action="#!" method="POST" id="form">
 
-        <!-- seller-information start -->
-        <fieldset class="border px-3 px-md-4 py-4 my-5 seller-information bg-gray">
+        <fieldset class="border px-3 px-md-4 py-4 my-5  bg-gray">
           <div class="row">
             <div class="col-lg-12">
               <h3>User Information</h3>
@@ -144,25 +157,25 @@ error_reporting(0);
               <input type="text" placeholder="Contact Number" class="form-control bg-white" required>
             </div>
             <div class="col-lg-6">
-              <h6 class="font-weight-bold pt-4 pb-1">Contact Name:</h6>
+              <h6 class="font-weight-bold pt-4 pb-1">Contact Email:</h6>
               <input type="email" placeholder="name@yourmail.com" class="form-control bg-white" required>
               <h6 class="font-weight-bold pt-4 pb-1">Address:</h6>
               <input type="text" placeholder="Your address" class="form-control bg-white" required>
             </div>
           </div>
         </fieldset>
-        <!-- seller-information end-->
 
-        <!-- Post Your ad start -->
         <fieldset class="border border-gary px-3 px-md-4 py-4 mb-5">
           <div class="row">
             <div class="col-lg-12">
               <h3>Book Service</h3>
             </div>
             <div class="col-lg-6">
+
               <h6 class="font-weight-bold pt-4 pb-1">Select a Car</h6>
-              <select name="car" class="form-control w-100 bg-white" id="inputGroupSelect">
-                <option value="">Select a car</option>
+
+              <select name="car" class="form-control w-100 bg-white" id="carBrand" onchange="populateModels()">
+                <option value="">Select Car Brand</option>
                 <option value="volkswagen">Volkswagen</option>
                 <option value="toyota">Toyota</option>
                 <option value="honda">Honda</option>
@@ -174,7 +187,52 @@ error_reporting(0);
                 <option value="subaru">Subaru</option>
                 <option value="nissan">Nissan</option>
               </select>
-              <!-- <input type="text" class="form-control bg-white" placeholder="Ad title go There" required> -->
+
+              <script>
+                function populateModels() {
+                  var carBrand = document.getElementById("carBrand").value;
+                  var carModelDropdown = document.getElementById("carModel");
+
+                  // Clear existing options
+                  carModelDropdown.innerHTML = "<option value=''>Select Car Model</option>";
+
+                  // Populate options based on the selected car brand
+                  if (carBrand === "volkswagen") {
+                    var models = ["Golf", "Jetta", "Passat", "Tiguan", "Atlas"];
+                  } else if (carBrand === "toyota") {
+                    var models = ["Corolla", "Camry", "RAV4", "Highlander", "Tacoma"];
+                  } else if (carBrand === "honda") {
+                    var models = ["Accord", "Civic", "CR-V", "Pilot", "Odyssey"];
+                  } else if (carBrand === "ford") {
+                    var models = ["F-150", "Escape", "Explorer", "Mustang", "Edge"];
+                  } else if (carBrand === "chevrolet") {
+                    var models = ["Silverado", "Equinox", "Traverse", "Tahoe", "Suburban"];
+                  } else if (carBrand === "bmw") {
+                    var models = ["3 Series", "5 Series", "X3", "X5", "7 Series"];
+                  } else if (carBrand === "audi") {
+                    var models = ["A4", "Q5", "A6", "Q7", "A3"];
+                  } else if (carBrand === "mercedes") {
+                    var models = ["C-Class", "E-Class", "GLC", "GLE", "S-Class"];
+                  } else if (carBrand === "subaru") {
+                    var models = ["Outback", "Forester", "Crosstrek", "Impreza", "Ascent"];
+                  } else if (carBrand === "nissan") {
+                    var models = ["Altima", "Rogue", "Sentra", "Pathfinder", "Titan"];
+                  } else {
+                    var models = [];
+                  }
+
+
+                  // Add options to the dropdown
+                  models.forEach(function (model) {
+                    var option = document.createElement("option");
+                    option.text = model;
+                    option.value = model.toLowerCase(); // Convert to lowercase for value
+                    carModelDropdown.add(option);
+                  });
+                }
+              </script>
+
+              
               <h6 class="font-weight-bold pt-4 pb-1">Car Type:</h6>
               <div class="row px-3">
                 <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white">
@@ -187,56 +245,54 @@ error_reporting(0);
                 </div>
               </div>
 
-              <h6 class="font-weight-bold pt-4 pb-1">Type of Service:</h6>
-              <select name="service_type" id="service_type" class="form-control w-100 bg-white" id="inputGroupSelect">
-                <option value="">Select Service Type</option>
-                <option value="oil_change">Oil Change</option>
-                <option value="tire_rotation">Tire Rotation</option>
-                <option value="brake_service">Brake Service</option>
-                <option value="engine_tune_up">Engine Tune-up</option>
-                <option value="battery_replacement">Battery Replacement</option>
-                <!-- Add more options as needed -->
-              </select>
+              <h6 class="font-weight-bold pt-4 pb-1">Select Services:</h6>
+              <div class="row px-3">
+                <div class="col-lg-4 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="regular" id="regular" >
+                  <label for="Wheels_Service" class="py-2">Wheels Service</label>
+                </div>
+                <div class="col-lg-4 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="engine" id="engine" >
+                  <label for="engine" class="py-2">Engine Service</label>
+                </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="car-oil" id="car-oil" >
+                  <label for="car-oil" class="py-2">Car Oiling</label>
+                </div>  
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="car-painting" id="car-painting" >
+                  <label for="car-painting" class="py-2">Car Painting</label>
+                </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="air-conditioner" id="air-conditioner" >
+                  <label for="air-conditioner" class="py-2">AC Service</label>
+                </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="window" id="window" >
+                  <label for="window" class="py-2">Windshields</label>
+                </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="vehicle" id="vehicle" >
+                  <label for="vehicle" class="py-2">Cleaning</label>
+                </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
+                  <input type="checkbox" name="itemName" value="protection" id="protection" >
+                  <label for="protection" class="py-2">Full Service</label>
+                  </div>
+              </div>
+
+
+              
+
+              
               <h6 class="font-weight-bold pt-4 pb-1">Car Service Description:</h6>
               <textarea name="" id="" class="form-control bg-white" rows="7"
                 placeholder="Write details about your Car service" required></textarea>
             </div>
             <div class="col-lg-6">
               <h6 class="font-weight-bold pt-4 pb-1">Select Model:</h6>
-              <select name="car_model" class="form-control w-100 bg-white" id="inputGroupSelect">
-                <option value="">Select Model</option>
-
-                <!-- Volkswagen -->
-                <optgroup label="Volkswagen">
-                  <option value="golf">Golf</option>
-                  <option value="jetta">Jetta</option>
-                  <option value="passat">Passat</option>
-                  <option value="tiguan">Tiguan</option>
-                  <option value="atlas">Atlas</option>
-                  <!-- Add more Volkswagen models here -->
-                </optgroup>
-
-                <!-- Toyota -->
-                <optgroup label="Toyota">
-                  <option value="corolla">Corolla</option>
-                  <option value="camry">Camry</option>
-                  <option value="rav4">RAV4</option>
-                  <option value="highlander">Highlander</option>
-                  <option value="tacoma">Tacoma</option>
-                  <!-- Add more Toyota models here -->
-                </optgroup>
-
-                <!-- Honda -->
-                <optgroup label="Honda">
-                  <option value="accord">Accord</option>
-                  <option value="civic">Civic</option>
-                  <option value="cr-v">CR-V</option>
-                  <option value="pilot">Pilot</option>
-                  <option value="odyssey">Odyssey</option>
-                  <!-- Add more Honda models here -->
-                </optgroup>
-
-                <!-- Add other car brands similarly -->
+              <select class="form-control w-100 bg-white" id="carModel">
+                <option value="">Select Car Model</option>
               </select>
 
               <h6 class="font-weight-bold pt-4 pb-1">Service Date:</h6>
@@ -259,11 +315,9 @@ error_reporting(0);
             </div>
           </div>
         </fieldset>
-        <!-- Post Your ad end -->
 
 
 
-        <!-- ad-feature start -->
         <fieldset class="border bg-white px-3 px-md-4 py-4 my-5 ad-feature bg-gray">
           <div class="row">
             <div class="col-lg-12">
@@ -355,7 +409,7 @@ Essential Scripts
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
   <script src="plugins/google-map/map.js" defer></script>
 
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
 
 </body>
 

@@ -5129,7 +5129,7 @@ input[type=submit].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, .5)
+    color: rgb(0 0 0 / 86%);
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
@@ -5220,6 +5220,16 @@ input[type=submit].btn-block {
 .navbar-dark .navbar-text a:hover {
     color: #fff
 }
+
+.card1{
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: 2px solid #fd7e14;
+
+}
+
+
+
 .card1:hover {
     background-color: #fd7e14;
     animation: shake 5s;
@@ -5365,14 +5375,14 @@ input[type=submit].btn-block {
 
 .card-img,
 .card-img-top {
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px)
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .card-img,
 .card-img-bottom {
-    border-bottom-right-radius: calc(.25rem - 1px);
-    border-bottom-left-radius: calc(.25rem - 1px)
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .card-deck .card {
@@ -8866,7 +8876,7 @@ button.bg-dark:hover {
 }
 
 .shadow-sm {
-    box-shadow: 0 .9rem .9rem rgba(255, 89, 43) !important
+    box-shadow: 0 .5rem .5rem rgba(255, 89, 43) !important
 }
 
 .shadow {

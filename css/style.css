@@ -389,6 +389,7 @@ button {
   color: #848484;
 }
 
+
 .user-profile,
 .dashboard {
   padding-top: 50px;
@@ -400,7 +401,7 @@ button {
 
 .overly:before {
   content: "";
-  background: rgba(0, 0, 0, 0.51);
+  background: rgba(119, 117, 117, 0.51);
   position: absolute;
   top: 0;
   left: 0;
@@ -696,7 +697,7 @@ ul.pagination .active a {
 }
 
 .bg-2 {
-  background: url(../images/subscription/subscription-back.jpg);
+  background: url(../images/car-service.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -720,11 +721,17 @@ ul.pagination .active a {
 }
 
 .login-button {
-  border: 2px solid #dedede;
-
+  border: 2px solid #000000a6;
   margin-right: 8px;
   padding: 6px 20px !important;
 }
+
+.login-button:focus,
+.login-button:hover {
+  background: #fe7e17;
+    color: rgb(255, 252, 252)
+}
+
 
 @media (max-width: 400px) {
   .login-button {

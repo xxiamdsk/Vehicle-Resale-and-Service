@@ -175,20 +175,6 @@ error_reporting(0);
 									<option value="4">Highest Price</option>
 								</select>
 							</div>
-							<div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
-								<div class="view">
-									<strong>Views</strong>
-									<ul class="list-inline view-switcher">
-										<li class="list-inline-item">
-											<a href="#!" onclick="event.preventDefault();" class="text-info"><i
-													class="fa fa-th-large"></i></a>
-										</li>
-										<li class="list-inline-item">
-											<a href="ad-list-view.html"><i class="fa fa-reorder"></i></a>
-										</li>
-									</ul>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div class="product-grid-list">
@@ -600,27 +586,7 @@ error_reporting(0);
 							</div>
 						</div>
 					</div>
-					<div class="pagination justify-content-center">
-						<nav aria-label="Page navigation example">
-							<ul class="pagination">
-								<li class="page-item">
-									<a class="page-link" href="cars.php" aria-label="Previous">
-										<span aria-hidden="true">&laquo;</span>
-										<span class="sr-only">Previous</span>
-									</a>
-								</li>
-								<li class="page-item"><a class="page-link" href="cars.php">1</a></li>
-								<li class="page-item active"><a class="page-link" href="cars.php">2</a></li>
-								<li class="page-item"><a class="page-link" href="cars.php">3</a></li>
-								<li class="page-item">
-									<a class="page-link" href="cars.php" aria-label="Next">
-										<span aria-hidden="true">&raquo;</span>
-										<span class="sr-only">Next</span>
-									</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
+					
 				</div>
 			</div>
 		</div>
