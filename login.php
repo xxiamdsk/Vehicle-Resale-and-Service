@@ -3,11 +3,11 @@
 session_start();
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if the email and password are provided
-    if (isset($_POST['email']) && isset($_POST['passwd'])) {
-        // Validate the email and password 
-        $email = $_POST['email'];
-        $passwd = $_POST['passwd'];
+	// Check if the email and password are provided
+	if (isset($_POST['email']) && isset($_POST['passwd'])) {
+		// Validate the email and password 
+		$email = $_POST['email'];
+		$passwd = $_POST['passwd'];
 		include_once 'config.php';
 		$sql = "SELECT * FROM customer WHERE email = '$email' AND pswd = '$passwd'";
 		$result = $conn->query($sql);
@@ -19,49 +19,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// User found, set session variables
 			$_SESSION['email'] = $email;
 			$_SESSION['name'] = $result->fetch_assoc()['name'];
-
 			// Redirect to current page after successful login
+			header("Location: index.php");
 			exit();
 		}
 
 		// Check if the user is an admin
-        // $sql = "SELECT * FROM admin WHERE email = '$email' AND pswd = '$password'";
-        // $result = $conn->query($sql);
-        // if ($result->num_rows == 1) {
-        //     // If the user is an admin, set session variables and redirect to admin dashboard
-        //     $_SESSION['user_type'] = 'admin';
-        //     $_SESSION['email'] = $email;
-        //     header("Location: admin/");
-        //     exit();
-        // }
+		// $sql = "SELECT * FROM admin WHERE email = '$email' AND pswd = '$password'";
+		// $result = $conn->query($sql);
+		// if ($result->num_rows == 1) {
+		//     // If the user is an admin, set session variables and redirect to admin dashboard
+		//     $_SESSION['user_type'] = 'admin';
+		//     $_SESSION['email'] = $email;
+		//     header("Location: admin/");
+		//     exit();
+		// }
 
 
 		// Check if the user is an admin
-        if ($email=='admin@gmail.com' && $passwd=='admin') {
-            // If the user is an admin, set session variables and redirect to admin dashboard
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = "Admin";
-            header("Location: admin/admin.php");
-            exit();
-        }
+		if ($email == 'admin@gmail.com' && $passwd == 'admin') {
+			// If the user is an admin, set session variables and redirect to admin dashboard
+			$_SESSION['email'] = $email;
+			$_SESSION['name'] = "Admin";
+			header("Location: admin/admin.php");
+			exit();
+		}
 		// check if the user is a service center owner
-        if ($email=='sc@gmail.com' && $passwd=='sc') {
-            // If the user is an admin, set session variables and redirect to admin dashboard
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = "SC Owner";
-            header("Location: service_center/sc_owner.php");
-            exit();
-        }
-		else {
+		if ($email == 'sc@gmail.com' && $passwd == 'sc') {
+			// If the user is an admin, set session variables and redirect to admin dashboard
+			$_SESSION['email'] = $email;
+			$_SESSION['name'] = "SC Owner";
+			header("Location: service_center/sc_owner.php");
+			exit();
+		} else {
 			// User not found or incorrect credentials, display error message
 			$error = "Invalid email or password";
 		}
-	
+
 		// Close database connection
 		$conn->close();
-	}}
+	}
+}
 
-	?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	<!-- favicon -->
 	<!-- <link href="images/favicon.png" rel="shortcut icon"> -->
-
 	<!-- 
   Essential stylesheets
   =====================================-->
@@ -102,36 +101,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="body-wrapper">
 
 
-	<!--Header--> 
-<?php include('header.php');?>
-<!-- /Header --> 
+	<!--Header-->
+	<?php include ('header.php'); ?>
+	<!-- /Header -->
 
 	<section class="login py-5 border-top-1">
 		<div class="container">
-		  <div class="row justify-content-center">
-			<div class="col-lg-5 col-md-8 align-item-center">
-			  <div class="border">
-				<h3 class="bg-gray p-4">Login Now</h3>
-				<form method="POST" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-				  <fieldset class="p-4">
-					<input class="form-control mb-3" type="text" name="email" placeholder="Username" required>
-					<input class="form-control mb-3" type="password" name="passwd" placeholder="Password" required>
-					<div class="loggedin-forgot">
-					  <input type="checkbox" id="keep-me-logged-in">
-					  <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
+			<div class="row justify-content-center">
+				<div class="col-lg-5 col-md-8 align-item-center">
+					<div class="border">
+						<h3 class="bg-gray p-4">Login Now</h3>
+						<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+							<fieldset class="p-4">
+								<input class="form-control mb-3" type="text" name="email" placeholder="Username"
+									required>
+								<input class="form-control mb-3" type="password" name="passwd" placeholder="Password"
+									required>
+								<div class="loggedin-forgot">
+									<input type="checkbox" id="keep-me-logged-in">
+									<label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
+								</div>
+								<button type="submit" name="login" value="login"
+									class="btn btn-primary font-weight-bold mt-3">Log in</button>
+								<a class="mt-3 d-block text-primary" href="#!">Forget Password?</a>
+								<a class="mt-3 d-inline-block text-primary" href="register.php">Register Now</a>
+							</fieldset>
+						</form>
 					</div>
-					<button type="submit" name="login" value="login" class="btn btn-primary font-weight-bold mt-3">Log in</button>
-					<a class="mt-3 d-block text-primary" href="#!">Forget Password?</a>
-					<a class="mt-3 d-inline-block text-primary" href="register.php">Register Now</a>
-				  </fieldset>
-				</form>
-			  </div>
+				</div>
 			</div>
-		  </div>
 		</div>
-	  </section>
+	</section>
 
-<!-- ========================================== -->
+	<!-- ========================================== -->
 	<!-- Footer -->
 	<?php include ('footer.php'); ?>
 

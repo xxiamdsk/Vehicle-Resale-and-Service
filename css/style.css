@@ -664,12 +664,23 @@ ul.pagination .active a {
   color: #fff;
 }
 
+.sidebar {
+  background: #000000;
+  overflow: hidden;
+  position: fixed;
+  z-index: 2;
+  width: 301px;
+  bottom: 0;
+  top: 60px;
+  overflow-y: auto;
+}
+
 .bg-light {
   background: #fff;
 }
 
 .bg-gray {
-  background: #F5F5F5;
+  background: #ffffff93;
 }
 
 .bg-1 {
@@ -709,8 +720,14 @@ ul.pagination .active a {
 }
 
 .bg-4 {
-  background: #5672f9;
+  background-image: url(../images/login.jpg);
+  background-repeat: no-repeat;
+    /* background-size: 1px 802px; */
+    background-position: center -125px;
+  
+
 }
+
 
 .navigation {
   padding: 20px 0;
