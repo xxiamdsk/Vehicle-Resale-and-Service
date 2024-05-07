@@ -20,18 +20,18 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav main-nav ">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.php">Home</a>
+                                <a class="nav-link " href="index.php">Home</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="cars.php">Buy
+                                <a class="nav-link hover-underline" href="cars.php">Buy
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="#!">Sell
+                                <a class="nav-link hover-underline" href="#!">Sell
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="Service.php">Service
+                                <a class="nav-link hover-underline" href="Service.php">Service
                                 </a>
                             </li>
                             <li class="nav-item dropdown dropdown-slide ">

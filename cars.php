@@ -1,9 +1,10 @@
-<?php 
+<?php
 session_start();
-include('config.php');
+include ('config.php');
 error_reporting(0);
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -81,34 +82,50 @@ error_reporting(0);
 			</div>
 		</div>
 	</section>
+
+
 	<section class="section-sm">
 		<div class="container">
-			
 			<div class="row">
 				<div class="col-lg-3 col-md-4">
 					<div class="category-sidebar">
 						<div class="widget category-list">
 							<h4 class="widget-header">All Category</h4>
 							<ul class="category-list">
-								<li><a href="cars.php">Sedan <span>9</span></a></li>
-								<li><a href="cars.php">Sedan <span>23</span></a></li>
-								<li><a href="cars.php">SUV  <span>18</span></a></li>
-								<li><a href="cars.php">Coupe <span>34</span></a></li>
-								<li><a href="cars.php">Convertible <span>43</span></a></li>
-								<li><a href="cars.php">Wagon <span>32</span></a></li>
-								<li><a href="cars.php">Pickup Truck <span>45</span></a></li>
+
+                    <!-- collect Brands of cars from cars table -->
+                    <?php
+                    $sql="SELECT brand, COUNT(model) as model FROM cars GROUP BY brand ORDER BY brand ASC";
+                    $result = mysqli_query($conn, $sql);
+                    $num = mysqli_num_rows($result);
+                    if ($num > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+								<li><a href="cars.php"><?php echo $row["brand"];?><span><?php echo $row["model"];?></span></a></li>
+                    <?php
+                        }
+                    }
+                    ?>
 							</ul>
 						</div>
 
 						<div class="widget category-list">
 							<h4 class="widget-header">Nearby</h4>
 							<ul class="category-list">
-								<li><a href="cars.php">Lucknow<span>93</span></a></li>
-								<li><a href="cars.php">Varanasi<span>233</span></a></li>
-								<li><a href="cars.php">Agra <span>183</span></a></li>
-								<li><a href="cars.php">Etwa <span>120</span></a></li>
-								<li><a href="cars.php">Mirzapur <span>40</span></a></li>
-								<li><a href="cars.php">Jaunpur<span>81</span></a></li>
+
+                    <!-- collect cities of cars from cars table -->
+                    <?php
+                    $sql="SELECT location, COUNT(*) AS car_count FROM cars GROUP BY location";
+                    $result = mysqli_query($conn, $sql);
+                    $num = mysqli_num_rows($result);
+                    if ($num > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+								<li><a href="cars.php"><?php echo $row["location"];?><span><?php echo $row["car_count"];?></span></a></li>
+                    <?php
+                        }
+                    }
+                    ?>
 							</ul>
 						</div>
 
@@ -167,7 +184,7 @@ error_reporting(0);
 					<div class="category-search-filter">
 						<div class="row">
 							<div class="col-md-6 text-center text-md-left">
-								<strong>Short</strong>
+								<strong>Sort by:</strong>
 								<select>
 									<option>Most Recent</option>
 									<option value="1">Most Popular</option>
@@ -179,414 +196,74 @@ error_reporting(0);
 					</div>
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$2L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/city.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
 
+                    <!-- collect info of cars from cars table -->
+                    <?php
+                    $sql = "SELECT * FROM cars where result='pass'";
+                    $result = mysqli_query($conn, $sql);
+                    $num = mysqli_num_rows($result);
+                    if ($num > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                        $regs=$row["resg_no"];
+                        $url = "buy_car.php?value=".urlencode($regs);
+                    ?>
 
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Cars card -->
+                        <div class="product-item bg-light">
+                            <div class="card">
+                                <div class="thumb-content">
+                                    <div class="price">
+                                        <?php echo "₹".$row["price"]; ?>
+                                    </div>
+                                    <a href="<?php echo $url; ?>">
+                                        <img class="card-img-top img-fluid" src="images/cars/city.jpg"
+                                            alt="Card image cap"></a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="<?php echo $url; ?>">
+                                        <?php echo $row['brand'].", "; 
+                                        echo $row['model'];
+                                        ?>
+                                    </a></h4>
+                                    <ul class="list-inline product-meta">
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo $url; ?>""><i class="fa fa-registered"></i>
+                                        <?php echo $row['resg_no']; ?>
+                                        </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo $url; ?>"><i class="fa fa-calendar"></i>
+                                        <?php echo $row['date']; ?>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit. Explicabo, aliquam!</p>
+                                    <div class="product-ratings">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$3L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/download.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$2L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/eco.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$4L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/fortu.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$5L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/Cars/city.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$1.5L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/download.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$4L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/eco.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$1.5L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/Cars/fortu.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZ</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<div class="price">$6L</div>
-											<a href="single.php">
-												<img class="card-img-top img-fluid" src="images/cars/city.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.php">Car XYZr</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.php"><i
-															class="fa fa-folder-open-o"></i>Car</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="cars.php"><i class="fa fa-calendar"></i>26th
-														December</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Explicabo, aliquam!</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
+                    <?php
+                        }
+                    }
+                    ?>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -615,4 +292,4 @@ Essential Scripts
 
 </body>
 
-</html>
+</html>k

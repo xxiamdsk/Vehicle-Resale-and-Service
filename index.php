@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-include('config.php');
+include ('config.php');
 error_reporting(0);
 
 ?>
@@ -50,7 +50,7 @@ error_reporting(0);
 =            Hero Area            =
 ================================-->
 
-	<section class="hero-area bg-1 text-center " >
+	<section class="hero-area bg-1 text-center ">
 		<!-- Container Start -->
 		<div class="container">
 			<div class="row">
@@ -120,12 +120,12 @@ error_reporting(0);
 =            Features Cars section            =
 ============================================-->
 
-	<section class="popular-deals section bg-gray">
+	<section class="section bg-gray">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-title">
-					<h2 style="font-weight: 800;">Featured Car</h2>
+						<h2 style="font-weight: 800;">Featured Car</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, magnam.</p>
 					</div>
 				</div>
@@ -134,166 +134,58 @@ error_reporting(0);
 				<!-- offer 01 -->
 				<div class="col-lg-12">
 					<div class="trending-ads-slide">
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<div class="price">$1.5L</div>
-										<a href="single.html">
-											<img class="card-img-top img-fluid"
-												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title"><a href="single.html">CAR XYZ</a></h4>
-										<ul class="list-inline product-meta">
-											<li class="list-inline-item">
-												<a href="single.html"><i class="fa fa-folder-open-o"></i>Cars</a>
-											</li>
-											<li class="list-inline-item">
-												<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
-											</li>
-										</ul>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Explicabo, aliquam!</p>
-										<div class="product-ratings">
-											<ul class="list-inline">
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											</ul>
+						<!-- retrive data from database for Featured Cars -->
+						<?php
+						$sql = "SELECT * FROM cars WHERE inspection='Full Inspection'";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+								$regs = $row["resg_no"];
+								$url = "buy_car.php?value=" . urlencode($regs);
+								?>
+								<div class="col-sm-12 col-lg-4">
+									<!-- product card -->
+									<div class="product-item bg-light">
+										<div class="card">
+											<div class="thumb-content">
+												<div class="price"><?php echo "₹ " . $row['price'] ?></div>
+												<a href="<?php echo $url; ?>">
+													<img class="card-img-top img-fluid"
+														src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+														alt="Card image cap">
+												</a>
+											</div>
+											<div class="card-body">
+												<h4 class="card-title"><a href="<?php echo $url; ?>"><?php echo $row['brand'];
+												echo ", " . $row['model'] ?></a></h4>
+												<ul class="list-inline product-meta">
+													<li class="list-inline-item">
+														<a href="<?php echo $url; ?>"><i class="fa fa-eye"></i>Most Viewed</a>
+													</li>
+													<li class="list-inline-item">
+														<a href="<?php echo $url; ?>"><i
+																class="fa fa-calendar"></i><?php echo $row['date'] ?></a>
+													</li>
+												</ul>
+												<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+													Explicabo, aliquam!</p>
+												<div class="product-ratings">
+													<ul class="list-inline">
+														<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-
-
-
-						</div>
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<div class="price">$2L</div>
-										<a href="single.html">
-											<img class="card-img-top img-fluid"
-												src="https://www.autobest.co.in/uploads/blog/366575132046.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title"><a href="single.html">CAR XYZ</a></h4>
-										<ul class="list-inline product-meta">
-											<li class="list-inline-item">
-												<a href="single.html"><i class="fa fa-folder-open-o"></i>Cars</a>
-											</li>
-											<li class="list-inline-item">
-												<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
-											</li>
-										</ul>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Explicabo, aliquam!</p>
-										<div class="product-ratings">
-											<ul class="list-inline">
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-
-						</div>
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<div class="price">$3L</div>
-										<a href="single.html">
-											<img class="card-img-top img-fluid"
-												src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title"><a href="single.html">CAR XYZ</a></h4>
-										<ul class="list-inline product-meta">
-											<li class="list-inline-item">
-												<a href="single.html"><i class="fa fa-folder-open-o"></i>Cars</a>
-											</li>
-											<li class="list-inline-item">
-												<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
-											</li>
-										</ul>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Explicabo, aliquam!</p>
-										<div class="product-ratings">
-											<ul class="list-inline">
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-
-						</div>
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<div class="price">$2.5L</div>
-										<a href="single.html">
-											<img class="card-img-top img-fluid"
-												src="https://www.autobest.co.in/uploads/blog/366575132046.jpg"
-												alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title"><a href="single.html">CAR XYZ</a></h4>
-										<ul class="list-inline product-meta">
-											<li class="list-inline-item">
-												<a href="single.html"><i class="fa fa-folder-open-o"></i>Cars</a>
-											</li>
-											<li class="list-inline-item">
-												<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
-											</li>
-										</ul>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Explicabo, aliquam!</p>
-										<div class="product-ratings">
-											<ul class="list-inline">
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-												<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-
-						</div>
+								<?php
+							}
+						}
+						?>
 					</div>
 				</div>
 			</div>
@@ -378,12 +270,12 @@ error_reporting(0);
 		=           Buy in ease Section            =
 		===========================================-->
 
-	<section class=" popular-deals section bg-gray">
+	<section class=" section bg-gray">
 											<div class="container">
 												<div class="row">
 													<div class="col-md-12">
 														<div class="section-title">
-														<h2 style="font-weight: 800;">Buy in 3 Easy Steps</h2>
+															<h2 style="font-weight: 800;">Buy in 3 Easy Steps</h2>
 															<p>How it Works</p>
 														</div>
 													</div>
@@ -400,7 +292,7 @@ error_reporting(0);
 																			<div class="price">1.</div>
 																			<a href="">
 																				<img class="card-img-top img-fluid"
-																					src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+																					src="images/find car.png"
 																					alt="Card image cap">
 																			</a>
 																		</div>
@@ -421,8 +313,9 @@ error_reporting(0);
 																			<div class="price">2.</div>
 																			<a href="">
 																				<img class="card-img-top img-fluid"
-																					src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
-																					alt="Card image cap">
+																					src="images/test_drive.jpg"
+																					alt="Card image cap"
+																					style="height: 226px;">
 																			</a>
 																		</div>
 																		<div class="card-body">
@@ -442,7 +335,7 @@ error_reporting(0);
 																			<div class="price">3.</div>
 																			<a href="">
 																				<img class="card-img-top img-fluid"
-																					src="https://5.imimg.com/data5/SELLER/Default/2023/5/306963288/JL/OB/RR/189266364/tata-safari-car-1000x1000.jpg"
+																					src="images/buy_car.jpg"
 																					alt="Card image cap">
 																			</a>
 																		</div>
@@ -467,7 +360,8 @@ error_reporting(0);
 =            Call to Action            =
 =====================================-->
 
-	<section class="call-to-action overly bg-3 call-section-sm" >
+	<section class="call-to-action overly bg-3 call-section-sm" style="
+	margin-top: 50px;">
 		<!-- Container Start -->
 		<div class="container">
 			<div class="row justify-content-md-center text-center">
@@ -490,7 +384,7 @@ error_reporting(0);
 
 
 
-	
+
 
 	<!-- ========================================== -->
 	<!-- Footer -->

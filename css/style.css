@@ -183,6 +183,7 @@ ul.social-circle-icons li a:hover {
   background: #5672f9;
 }
 
+
 .store-list h4 {
   font-size: 20px;
   margin-bottom: 20px;
@@ -238,7 +239,7 @@ figure {
 
 a {
   transition: all 0.3s ease-in 0s;
-  color: #000;
+  color: #000000;
 }
 
 iframe {
@@ -249,7 +250,7 @@ a:focus,
 a:hover {
   text-decoration: none;
   outline: 0;
-  color: #5672f9;
+  color: #000000;
 }
 
 .form-control {
@@ -337,7 +338,8 @@ button {
 }
 
 .section {
-  padding: 100px 0;
+  padding-top: 100px;
+
 }
 
 .call-section-sm {
@@ -664,16 +666,6 @@ ul.pagination .active a {
   color: #fff;
 }
 
-.sidebar {
-  background: #000000;
-  overflow: hidden;
-  position: fixed;
-  z-index: 2;
-  width: 301px;
-  bottom: 0;
-  top: 60px;
-  overflow-y: auto;
-}
 
 .bg-light {
   background: #fff;
@@ -685,25 +677,28 @@ ul.pagination .active a {
 
 .bg-1 {
   /* padding-top: 200px; */
-  background-image: url(../images/hero.png);
+  background-image: url(../images/kindpng_4950809.png);
   background-repeat: no-repeat;
   background-position: center 50%;
-  background-size: 1700px 360px;
+  background-size: 1200px 330px;
 }
+
 .bg-1:hover {
   /* zoom only background */
-  animation: zoom-in-out 1s ;
+  animation: zoom-in-out 1s;
 }
 
 @keyframes zoom-in-out {
   0% {
-    background-size: 1700px 360px;
+    background-size: 1200px 330px;
   }
+
   50% {
-    background-size: 1800px 380px;
+    background-size: 1300px 350px;
   }
+
   100% {
-    background-size: 1700px 360px;
+    background-size: 1200px 330px;
   }
 }
 
@@ -722,15 +717,15 @@ ul.pagination .active a {
 .bg-4 {
   background-image: url(../images/login.jpg);
   background-repeat: no-repeat;
-    /* background-size: 1px 802px; */
-    background-position: center -125px;
-  
+  /* background-size: 1px 802px; */
+  background-position: center -125px;
+
 
 }
 
 
 .navigation {
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .navigation .navbar-nav {
@@ -745,8 +740,8 @@ ul.pagination .active a {
 
 .login-button:focus,
 .login-button:hover {
-  background: #fe7e17;
-    color: rgb(255, 252, 252)
+  background: #fe7f17ab;
+  color: rgb(255, 252, 252)
 }
 
 
@@ -794,10 +789,13 @@ ul.pagination .active a {
 }
 
 .main-nav .nav-item .nav-link {
-  font-size: 16px;
+  font-size: 13px;
   line-height: 43px;
   padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
+
 
 .main-nav .nav-item .nav-link span {
   margin-left: 4px;
@@ -870,9 +868,11 @@ ul.pagination .active a {
 }
 
 .dropdown-item {
-  font-size: 14px;
-  padding: 10px 60px 10px 25px;
+  font-size: 13px;
+    padding: 10px 60px 10px 25px;
+    font-weight: 600;
 }
+
 
 @media (max-width: 992px) {
   .dropdown-item {
@@ -972,6 +972,30 @@ ul.pagination .active a {
   }
 }
 
+.hover-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #ca7514;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
 .hero-area .content-block h1,
 .hero-area-2 .content-block h1 {
   color: #860a0a;
@@ -981,8 +1005,7 @@ ul.pagination .active a {
   margin-bottom: 15px;
 }
 
-.hero-area .content-block h1:hover
-{
+.hero-area .content-block h1:hover {
   animation: normal 1s;
 }
 
@@ -990,9 +1013,11 @@ ul.pagination .active a {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -1034,7 +1059,7 @@ ul.pagination .active a {
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
   margin-bottom: -50px;
-  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.822);
 }
 
 @media (max-width: 480px) {
@@ -1573,7 +1598,7 @@ ul.pagination .active a {
 }
 
 .product-item {
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.486);
   margin-bottom: 30px;
 }
 
@@ -1588,7 +1613,7 @@ ul.pagination .active a {
 .product-item .card .card-body .card-title {
   font-size: 18px;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .product-item .card .card-body .card-text {
@@ -1799,7 +1824,7 @@ ul.pagination .active a {
 
 .widget {
   background: #fff;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 2px 3px rgb(193 159 159 / 53%);
   padding: 25px 30px 30px;
   margin-bottom: 30px;
   border-radius: 2px;
@@ -1830,7 +1855,8 @@ ul.pagination .active a {
   background: #F4F7F9;
   border-radius: 10px;
   padding: 3px 8px;
-  color: #84919B;
+  color: #000000;
+  font-weight: 700;
 }
 
 .widget.category-list ul li a:hover {
@@ -2104,8 +2130,8 @@ ul.pagination .active a {
 }
 
 .call-to-action .content-holder h2 {
-  color: #fff;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 @media (max-width: 400px) {

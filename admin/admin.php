@@ -87,7 +87,7 @@ error_reporting(0);
                                 <span><i class="fa fa-car fa-3x" aria-hidden="true"></i>
                                 <p class="card-text">
                                     <?php
-                                    // Query to count the number of users in the customer table
+                                    // Query to count the number of cars in the cars table
                                     $query = "SELECT * FROM cars";
                                     $result = mysqli_query($conn, $query);
                                     $num_rows = mysqli_num_rows($result);
@@ -95,6 +95,42 @@ error_reporting(0);
                                     ?>
                                 </p></span>
                                 <a href="cars.php" class="btn btn-primary">Cars</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Booking</h5>
+                                <span><i class="fa fa-car fa-3x" aria-hidden="true"></i>
+                                <p class="card-text">
+                                    <?php
+                                    // Query to count the number of booking in the booking table
+                                    $query = "SELECT * FROM booking";
+                                    $result = mysqli_query($conn, $query);
+                                    $num_rows = mysqli_num_rows($result);
+                                    echo $num_rows;
+                                    ?>
+                                </p></span>
+                                <a href="booking.php" class="btn btn-primary">Booking</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Service Center</h5>
+                                <span><i class="fa fa-car fa-3x" aria-hidden="true"></i>
+                                <p class="card-text">
+                                    <?php
+                                    // Query to count the number of service center in the service center table
+                                    $query = "SELECT * FROM service_center";
+                                    $result = mysqli_query($conn, $query);
+                                    $num_rows = mysqli_num_rows($result);
+                                    echo $num_rows;
+                                    ?>
+                                </p></span>
+                                <a href="service_center.php" class="btn btn-primary">Service Center</a>
                             </div>
                         </div>
                     </div>
