@@ -34,8 +34,8 @@
                                 <a class="nav-link hover-underline" href="Service.php">Service
                                 </a>
                             </li>
-                            <li class="nav-item dropdown dropdown-slide ">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">
+                            <li class="nav-item dropdown dropdown-slide">
+                                <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#!">
                                     <?php if (isset($_SESSION['email'])) { ?>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black"
                                             class="bi bi-person" viewBox="0 0 16 16">
@@ -46,17 +46,18 @@
                                         echo "Hello " . $_SESSION['name'];
                                         ?>
                                         <span><i class="fa fa-angle-down"></i></span></a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu ">
                                         <?php if (isset($_SESSION['email'])) { ?>
                                             <li><a class="dropdown-item " href="dashboard.php">Profile</a></li>
                                             <li><a class="dropdown-item " href="dashboard.php">My Cars</a></li>
                                             <!-- <li><a class="dropdown-item " href="#"> Favourite Car</a></li> -->
                                             <li><a class="dropdown-item " href="Logout.php"> Logout</a></li>
                                         </ul>
+                                        
                                     <?php } ?>
-
-
-
+    
+    
+    
                                 <?php } else {
                                     echo 'Dashboard ';
                                     ?>
@@ -68,15 +69,12 @@
                                         <!-- <li><a class="dropdown-item " href="#"> Favourite Car</a></li> -->
                                     </ul>
                                 </li>
-                            </ul>
+                        </ul>
                             <?php
 
                                 }
 
                                 ?>
-
-
-
                         <?php
                         
                         if (isset($_SESSION['email'])) {

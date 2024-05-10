@@ -7355,6 +7355,8 @@ a.close.disabled {
     background-color: #007bff !important
 }
 
+
+
 a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
@@ -7418,7 +7420,7 @@ button.bg-danger:hover {
 }
 
 .bg-light {
-    background-color: #f8f9fa !important
+    background-color: #dfe3e7 !important
 }
 
 a.bg-light:focus,
@@ -11331,7 +11333,7 @@ a.text-light:hover {
 }
 
 .text-dark {
-    color: #343a40 !important
+    color: #000000 !important
 }
 
 a.text-dark:focus,

@@ -840,6 +840,15 @@ ul.pagination .active a {
   padding-left: 5px;
 }
 
+
+.right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px; /* Optional: Add margin for spacing */
+  color: #ffffff; 
+  
+}
 .dropdown-menu {
   padding: 0;
   border-radius: 0;

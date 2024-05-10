@@ -44,13 +44,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			header("Location: admin/admin.php");
 			exit();
 		}
+
 		// check if the user is a service center owner
-		if ($email == 'sc@gmail.com' && $passwd == 'sc') {
-			// If the user is an admin, set session variables and redirect to admin dashboard
+		$sql = "SELECT * FROM service_center WHERE email = '$email' AND pswd = '$passwd'";
+		$result = $conn->query($sql);
+		if ($result->num_rows == 1) {
+			$sql = "SELECT name FROM service_center WHERE email = '$email'";
+			$result = $conn->query($sql);
+
+			// If the user is an sc owner, set session variables and redirect to sc dashboard
 			$_SESSION['email'] = $email;
-			$_SESSION['name'] = "SC Owner";
+			$_SESSION['name'] = $result->fetch_assoc()['name'];
 			header("Location: service_center/sc_owner.php");
 			exit();
+
 		} else {
 			// User not found or incorrect credentials, display error message
 			$error = "Invalid email or password";

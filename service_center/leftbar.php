@@ -1,5 +1,5 @@
  <!-- Sidebar -->
- <div class="sidebar bg-dark">
+ <div class="sidebar bg-dark" style="width:300px;">
         <div class="container">
             <h2 class="text-center" style="color: white; ">Service Center Dashboard</h2>
             <ul class="nav flex-column">

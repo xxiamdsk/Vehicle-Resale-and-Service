@@ -1,8 +1,150 @@
 <?php
 session_start();
-include ('config.php');
-error_reporting(0);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Database connection parameters
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "vrs"; 
+
+// Create connection
+
+$conn= new mysqli($servername, $username, $password, $dbname);
+
+  // Function to generate a new Booking ID
+  function generateBookingID($db)
+  {
+    $query = "SELECT MAX(b_no) AS last_id FROM booking";
+    $result = mysqli_query($db, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+      $row = mysqli_fetch_assoc($result);
+      $lastID = $row['last_id'];
+
+      // Extract the numeric part from the last ID
+      $numericPart = intval(substr($lastID, 2));
+
+      // Increment the numeric part
+      $newNumericPart = $numericPart + 1;
+
+      // Format the new ID with leading zeros
+      $newID = 'BK' . sprintf('%03d', $newNumericPart);
+
+      return $newID;
+    } else {
+      // If no records found, start from BK001
+      return 'BK001';
+    }
+  }
+
+  $bookingID = generateBookingID($conn);
+
+  // check if session is on or not
+  if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+    $sql = "SELECT uid FROM customer WHERE email = '$email'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $customer_id = $row['uid'];
+  } else {
+      // Function to generate a new customer ID
+  function generateCustomerID($db) {
+    $query = "SELECT MAX(uid) AS last_id FROM customer";
+    $result = mysqli_query($db, $query);
+    
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $lastID = $row['last_id'];
+
+        // Extract the numeric part from the last ID
+        $numericPart = intval(substr($lastID, 4));
+        
+        // Increment the numeric part
+        $newNumericPart = $numericPart + 1;
+        
+        // Format the new ID with leading zeros
+        $newID = 'CUST' . sprintf('%03d', $newNumericPart);
+        
+        return $newID;
+    } else {
+        // If no records found, start from CUST001
+        return 'CUST001';
+    }
+}
+  }
+
+  $customer_id=generateCustomerID($conn);
+  $contactName = $_POST['name'];
+  $email=$_POST['email'];
+  $passwd="0";
+  $contactNumber = $_POST['number'];
+  $address = $_POST['address'];
+
+  // SQL query to insert new user into database
+  $sql = "INSERT INTO customer (uid,name,email, pswd,ph_no,address) VALUES (?, ?,?,?,?,?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("ssssss", $customer_id, $contactName, $email, $passwd, $contactNumber, $address);
+
+  $location = $_POST['location'];
+  $carBrand = $_POST['car'];
+  $carModel = $_POST['carModel'];
+  $regNo = $_POST['regsno'];
+  $desc = $_POST['desc'];
+  $date = $_POST['date'];
+  $time = $_POST['time'];
+  $services = $_POST['serviceName'];
+
+  if ($location=='Varanasi')
+  {
+    $scid='SC001';
+  }
+  else if ($location=='Lucknow')
+  {
+    $scid='SC002';
+  }
+  else if ($location=='Kanpur')
+  {
+    $scid='SC003';
+  }
+  else if ($location=='Prayagraj')
+  {
+    $scid='SC004';
+  }
+  
+  $status='pending';
+  $amount="0";
+
+
+  $sql = "INSERT INTO booking (b_no,resg_no,uid,brand,model,sc_id,amount,location,date,service,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+  $stmt1 = $conn->prepare($sql);
+  $stmt1->bind_param("sssssssssss", $bookingID, $regNo, $customer_id, $carBrand, $carModel, $scid,$amount, $location, $date,$services, $status);
+  
+  if ($stmt->execute() && $stmt1->execute()) {
+    // booking successful
+    $_SESSION['email'] = $email;
+    $_SESSION['name'] = $contactName;
+    
+    // Redirect to a secure page after successful registration
+    header("Location: index.php");
+    echo "Booking done";
+    exit();
+
+  } else {
+    // Registration failed, display an error message
+    $error = "booking failed";
+    echo $error;
+  }
+
+  // Close database connection
+  $conn->close();
+
+
+}
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +196,7 @@ error_reporting(0);
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox1')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top card-img-bottom" width="242" height="151">
               <img src="images\service logos\wheels.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -64,7 +206,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox2')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\engine.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -74,7 +216,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox3')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\car-oil.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -84,7 +226,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox4')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\car-painting.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -94,7 +236,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox5')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\air-conditioner.png" alt="" srcset="" width="150" height="144"
                 class="center">
@@ -105,7 +247,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox6')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\window.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -115,7 +257,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('checkbox7')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\vehicle.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -125,7 +267,7 @@ error_reporting(0);
           </div>
         </div>
         <div class="col " style="padding-bottom: 15px;">
-          <a href="#form">
+          <a href="#form" onclick="autoCheck('mainCheckbox')">
             <div class="card1 shadow-sm  bd-placeholder-img card-img-top" width="242" height="151">
               <img src="images\service logos\protection.png" alt="" srcset="" width="150" height="144" class="center">
             </div>
@@ -143,7 +285,7 @@ error_reporting(0);
 
   <section class="advt-post bg-gray py-5">
     <div class="container">
-      <form action="#!" method="POST" id="form">
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"" method="POST" id="form">
 
         <fieldset class="border px-3 px-md-4 py-4 my-5  bg-gray">
           <div class="row">
@@ -152,18 +294,28 @@ error_reporting(0);
             </div>
             <div class="col-lg-6">
               <h6 class="font-weight-bold pt-4 pb-1">Contact Name:</h6>
-              <input type="text" placeholder="Contact name" class="form-control bg-white" required>
-              <h6 class="font-weight-bold pt-4 pb-1">Contact Number:</h6>
-              <input type="text" placeholder="Contact Number" class="form-control bg-white" required>
+              <input type="text" placeholder="Contact name" name="name" class="form-control bg-white" required>
+              <h6 class="font-weight-bold pt-4 pb-1">Address :</h6>
+              <input type="text" placeholder="Address" name="address" class="form-control bg-white" required>
+              <h6 class="font-weight-bold pt-4 pb-1">Email :</h6>
+              <input type="Email" placeholder="email.example.com" name="email" class="form-control bg-white" required>
             </div>
             <div class="col-lg-6">
-              <h6 class="font-weight-bold pt-4 pb-1">Contact Email:</h6>
-              <input type="email" placeholder="name@yourmail.com" class="form-control bg-white" required>
-              <h6 class="font-weight-bold pt-4 pb-1">Address:</h6>
-              <input type="text" placeholder="Your address" class="form-control bg-white" required>
+              <h6 class="font-weight-bold pt-4 pb-1">Contact Number:</h6>
+              <input type="number" placeholder="Contact Number" name="number" class="form-control bg-white" required>
+              <h6 class="font-weight-bold pt-4 pb-1">Location:</h6>
+              <!-- <input type="text" placeholder="Your address" class="form-control bg-white" required> -->
+              <select name="location" class="form-control w-100 bg-white" id="Location" required>
+                <option value="">Select Location</option>
+                <option value="Varanasi">Varanasi</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Kanpur">Kanpur</option>
+                <option value="Prayagraj">Prayagraj</option>
+              </select>
             </div>
           </div>
         </fieldset>
+
 
         <fieldset class="border border-gary px-3 px-md-4 py-4 mb-5">
           <div class="row">
@@ -232,75 +384,93 @@ error_reporting(0);
                 }
               </script>
 
-              
-              <h6 class="font-weight-bold pt-4 pb-1">Car Type:</h6>
-              <div class="row px-3">
-                <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="radio" name="itemName" value="personal" id="personal" required>
-                  <label for="personal" class="py-2">Personal</label>
-                </div>
-                <div class="col-lg-4 mr-lg-4 my-2 pt-2 pb-1 rounded bg-white ">
-                  <input type="radio" name="itemName" value="business" id="business" required>
-                  <label for="business" class="py-2">Business</label>
-                </div>
-              </div>
+
+              <h6 class="font-weight-bold pt-4 pb-1">Car Registration Number:</h6>
+              <input type="text" placeholder="Registration Number" name="regsno" class="form-control bg-white" required>
+
 
               <h6 class="font-weight-bold pt-4 pb-1">Select Services:</h6>
               <div class="row px-3">
-                <div class="col-lg-4 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="regular" id="regular" >
-                  <label for="Wheels_Service" class="py-2">Wheels Service</label>
+                <div class="col-lg-4 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="Wheels Service" id="checkbox1">
+                  <label for="Wheels_Service" class="py-2  text-dark">Wheels Service</label>
                 </div>
-                <div class="col-lg-4 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="engine" id="engine" >
-                  <label for="engine" class="py-2">Engine Service</label>
+                <div class="col-lg-4 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="engine" id="checkbox2">
+                  <label for="engine" class="py-2 text-dark">Engine Service</label>
                 </div>
-                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="car-oil" id="car-oil" >
-                  <label for="car-oil" class="py-2">Car Oiling</label>
-                </div>  
-                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="car-painting" id="car-painting" >
-                  <label for="car-painting" class="py-2">Car Painting</label>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="car-oil" id="checkbox3">
+                  <label for="car-oil" class="py-2 text-dark">Car Oiling</label>
                 </div>
-                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="air-conditioner" id="air-conditioner" >
-                  <label for="air-conditioner" class="py-2">AC Service</label>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="car-painting" id="checkbox4">
+                  <label for="car-painting" class="py-2 text-dark">Car Painting</label>
                 </div>
-                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="window" id="window" >
-                  <label for="window" class="py-2">Windshields</label>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="air-conditioner" id="checkbox5">
+                  <label for="air-conditioner" class="py-2 text-dark">AC Service</label>
                 </div>
-                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="vehicle" id="vehicle" >
-                  <label for="vehicle" class="py-2">Cleaning</label>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="window" id="checkbox6">
+                  <label for="window" class="py-2 text-dark">Windshields</label>
                 </div>
-                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-white">
-                  <input type="checkbox" name="itemName" value="protection" id="protection" >
-                  <label for="protection" class="py-2">Full Service</label>
-                  </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="vehicle Cleaning" id="checkbox7">
+                  <label for="vehicle" class="py-2 text-dark">Cleaning</label>
+                </div>
+                <div class="col-lg-3 mr-lg-3 my-2 pt-2 pb-1 rounded bg-light">
+                  <input type="checkbox" name="serviceName" value="full Sevice" id="mainCheckbox"
+                    onclick="toggleCheckboxes()">
+                  <label for="protection" class="py-2 text-dark ">Full Service</label>
+                </div>
               </div>
 
+              <script>
+                // Function to auto check the checkbox
+                function autoCheck(checkboxId) {
+                  document.getElementById(checkboxId).checked = true;
+                }
 
-              
+                // Function to toggle checkboxes
+                function toggleCheckboxes() {
+                  var mainCheckbox = document.getElementById('mainCheckbox');
+                  var otherCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(#mainCheckbox)');
 
-              
+                  if (mainCheckbox.checked) {
+                    // Disable and uncheck other checkboxes
+                    otherCheckboxes.forEach(function (checkbox) {
+                      checkbox.disabled = true;
+                      checkbox.checked = false;
+                    });
+                  } else {
+                    // Enable other checkboxes
+                    otherCheckboxes.forEach(function (checkbox) {
+                      checkbox.disabled = false;
+                    });
+                  }
+                }
+              </script>
+
+
+
+
+
               <h6 class="font-weight-bold pt-4 pb-1">Car Service Description:</h6>
-              <textarea name="" id="" class="form-control bg-white" rows="7"
-                placeholder="Write details about your Car service" required></textarea>
+              <textarea name="desc" id="desc" class="form-control bg-white" rows="7"
+                placeholder="Write details about your Car service" ></textarea>
             </div>
             <div class="col-lg-6">
               <h6 class="font-weight-bold pt-4 pb-1">Select Model:</h6>
-              <select class="form-control w-100 bg-white" id="carModel">
+              <select class="form-control w-100 bg-white" id="carModel" name="carModel">
                 <option value="">Select Car Model</option>
               </select>
 
               <h6 class="font-weight-bold pt-4 pb-1">Service Date:</h6>
-              <input type="date" class="form-control bg-white" required>
+              <input type="date" name="date" class="form-control bg-white" required>
               <h6 class="font-weight-bold pt-4 pb-1">Service Time:</h6>
-              <input type="time" class="form-control bg-white" required>
-              <h6 class="font-weight-bold pt-4 pb-1">Service Location:</h6>
-              <input type="text" class="form-control bg-white" placeholder="Service Location" required>
+              <input type="time" name="time" class="form-control bg-white" required>
+
 
               <h6 class="font-weight-bold pt-4 pb-1">Upload Image:</h6>
               <div class="choose-file text-center my-4 py-4 rounded bg-white">
@@ -333,7 +503,7 @@ error_reporting(0);
               <span class="mb-3 d-block">Premium Service Options:</span>
               <ul>
                 <li>
-                  <input type="radio" id="regular-ad" name="Service">
+                  <input type="radio" id="regular" name="Service">
                   <label for="regular-ad" class="font-weight-bold text-dark py-1">Regular Service</label>
                   <span>$00.00</span>
                 </li>
@@ -373,7 +543,8 @@ error_reporting(0);
             </div>
           </div>
         </fieldset>
-        <!-- ad-feature start -->
+
+     
 
         <!-- submit button -->
         <div class="checkbox d-inline-flex">

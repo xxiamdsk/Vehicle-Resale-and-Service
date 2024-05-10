@@ -4,10 +4,10 @@ session_start(); // Start PHP session
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Database connection parameters
-  $servername = "localhost"; // Change this to your database server name
-  $username = "root"; // Change this to your database username
-  $password = ""; // Change this to your database password
-  $dbname = "vrs"; // Change this to your database name
+  $servername = "localhost"; 
+  $username = "root"; 
+  $password = ""; 
+  $dbname = "vrs"; 
 
   // Create connection
   
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $phone = $_POST['phone'];
   $address = $_POST['address'];
   $email = $_POST['email'];
-  $passwd = $_POST['passwd']; // You should hash the password before storing it in the database
+  $passwd = $_POST['passwd']; // hash the password before storing it in the database
   echo $email;
   echo $passwd;
   echo $id;
@@ -58,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "INSERT INTO customer (uid,name,email, pswd,ph_no,address) VALUES (?, ?,?,?,?,?)";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ssssss", $id, $name, $email, $passwd, $phone, $address);
-  // $stmt->bind_param("ss", $email, $passwd);
 
   if ($stmt->execute()) {
     // Registration successful, set session variables
