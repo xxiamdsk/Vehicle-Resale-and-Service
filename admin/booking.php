@@ -246,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     Are you sure you want to delete this booking?
                                 </H4>
                                 <label for="b_no" class="form-label">Booking Number</label>
-                                <input type="text" class="form-control" id="b_no" name="b_no" placeholder="<?php echo $row['b_no']; ?>">
+                                <input type="text" class="form-control" id="b_no" name="b_no" placeholder="kldfjgh">
                             </div>
                             <button type="submit" class="btn btn-primary">Delete</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -276,4 +276,63 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Populate Form Placeholders</title>
+</head>
+<body>
+
+<h2>Populate Form Placeholders</h2>
+
+<form id="myForm" action="submit.php" method="post">
+    <?php
+    // Database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "vrs";
+
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch data from database
+    $sql = "SELECT * FROM booking "; // Assuming you only need one row
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        $row = $result->fetch_assoc();
+        ?>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="<?php echo $row["b_no"]; ?>"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" value="<?php echo $row["model"]; ?>"><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" value="<?php echo $row["brand"]; ?>"><br><br>
+    <?php
+    } else {
+        echo "0 results";
+    }
+
+    // Close database connection
+    $conn->close();
+    ?>
+    
+    <input type="submit" value="Submit">
+</form>
+
+</body>
 </html>
