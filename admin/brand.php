@@ -93,7 +93,6 @@ error_reporting(0);
             <tr>
                 <th>Brand Name</th>
                 <th>Model</th>
-                <th>Action</th>
             </tr>
             <?php
             // select only DISTINCT brand and model from cars table 
@@ -105,11 +104,7 @@ error_reporting(0);
                     <tr>
                         <td><?php echo $row['brand']; ?></td>
                         <td><?php echo $row['model']; ?></td>
-                        <td>
-                                <a href="#" style="padding-right: 10px;"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#"><i class="fas fa-eraser"></i> </a>
-                            </td>
-                        </td>
+                        
 
                     </tr>
             <?php
