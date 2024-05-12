@@ -19,8 +19,9 @@ error_reporting(0);
     <link href="../plugins/slick/slick-theme.css" rel="stylesheet">
     <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="../css/style.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Custom styles -->
@@ -73,7 +74,6 @@ error_reporting(0);
         }
     </style>
 </head>
-
 <body>
 
     <!-- header -->
