@@ -287,7 +287,7 @@ $conn= new mysqli($servername, $username, $password, $dbname);
     <div class="container">
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"" method="POST" id="form">
 
-        <fieldset class="border px-3 px-md-4 py-4 my-5  bg-gray">
+        <fieldset class=" shadow rounded px-3 px-md-4 py-4 my-5  bg-gray">
           <div class="row">
             <div class="col-lg-12">
               <h3>User Information</h3>
@@ -317,7 +317,7 @@ $conn= new mysqli($servername, $username, $password, $dbname);
         </fieldset>
 
 
-        <fieldset class="border border-gary px-3 px-md-4 py-4 mb-5">
+        <fieldset class="shadow rounded border-gary px-3 px-md-4 py-4 mb-5">
           <div class="row">
             <div class="col-lg-12">
               <h3>Book Service</h3>
@@ -326,17 +326,22 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
               <h6 class="font-weight-bold pt-4 pb-1">Select a Car</h6>
 
-              <select name="car" class="form-control w-100 bg-white" id="carBrand" onchange="populateModels()">
+              <select name="car" class="form-control rounded w-100 bg-white" id="carBrand" onchange="populateModels()">
                 <option value="">Select Car Brand</option>
+                <option value="marutisuzuki">Maruti Suzuki</option>
+                <option value="mahindra">Mahindra</option>
+                <option value="tata">Tata</option>
+                <option value="mg">MG</option>
+                <option value="kia">Kia</option>
+                <option value="skoda">Skoda</option>
+                <option value="renault">Renault</option>
                 <option value="volkswagen">Volkswagen</option>
                 <option value="toyota">Toyota</option>
                 <option value="honda">Honda</option>
                 <option value="ford">Ford</option>
-                <option value="chevrolet">Chevrolet</option>
                 <option value="bmw">BMW</option>
                 <option value="audi">Audi</option>
                 <option value="mercedes">Mercedes-Benz</option>
-                <option value="subaru">Subaru</option>
                 <option value="nissan">Nissan</option>
               </select>
 
@@ -350,11 +355,23 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
                   // Populate options based on the selected car brand
                   if (carBrand === "volkswagen") {
-                    var models = ["Golf", "Jetta", "Passat", "Tiguan", "Atlas"];
+                    var models = ["Polo GT", "Virtus", "Passat", "Tiguan", "Atlas"];
+                  } else if (carBrand === "marutisuzuki") {
+                    var models = ["Swift", "Baleno", "WagonR", "Ertiga", "Dzire","Alto","Celerio","Brezza","Grand Vitara"];
+                  } else if (carBrand === "mahindra") {
+                    var models = ["ScorpioN", "Bolero", "XUV 700", "XUV 300", "Alturas G4","Scorpio Classic","Thar","Marrazo"];
+                  } else if (carBrand === "tata") {
+                    var models = ["Indica", "Indigo", "Tiago", "Tigor", "Altroz","Nexon","Punch","Harrier","Safari","Nano"];
+                  } else if (carBrand === "mg") {
+                    var models = ["Hector", ""];
+                  } else if (carBrand === "kia") {
+                    var models = ["Seltos", "Carrens", "Sonet", "Carnival"]; 
+                  } else if (carBrand === "skoda") {
+                    var models = ["Rapid", "Superb", "Slavia","kushaq"];       
                   } else if (carBrand === "toyota") {
-                    var models = ["Corolla", "Camry", "RAV4", "Highlander", "Tacoma"];
+                    var models = ["Corolla", "Fortuner", "Innova", "Land Cruiser", "Glanza","Urban Cruiser","Yaris","Etios"];
                   } else if (carBrand === "honda") {
-                    var models = ["Accord", "Civic", "CR-V", "Pilot", "Odyssey"];
+                    var models = ["Accord", "Civic", "CR-V", "City","Amaze","BR-V","Odyssey"];
                   } else if (carBrand === "ford") {
                     var models = ["F-150", "Escape", "Explorer", "Mustang", "Edge"];
                   } else if (carBrand === "chevrolet") {
@@ -386,7 +403,7 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
 
               <h6 class="font-weight-bold pt-4 pb-1">Car Registration Number:</h6>
-              <input type="text" placeholder="Registration Number" name="regsno" class="form-control bg-white" required>
+              <input type="text" placeholder="Registration Number" name="regsno" class="form-control rounded bg-white" required>
 
 
               <h6 class="font-weight-bold pt-4 pb-1">Select Services:</h6>
@@ -457,19 +474,19 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
 
               <h6 class="font-weight-bold pt-4 pb-1">Car Service Description:</h6>
-              <textarea name="desc" id="desc" class="form-control bg-white" rows="7"
+              <textarea name="desc" id="desc" class="form-control rounded bg-white" rows="7"
                 placeholder="Write details about your Car service" ></textarea>
             </div>
             <div class="col-lg-6">
               <h6 class="font-weight-bold pt-4 pb-1">Select Model:</h6>
-              <select class="form-control w-100 bg-white" id="carModel" name="carModel">
+              <select class="form-control rounded w-100 bg-white" id="carModel" name="carModel">
                 <option value="">Select Car Model</option>
               </select>
 
               <h6 class="font-weight-bold pt-4 pb-1">Service Date:</h6>
-              <input type="date" name="date" class="form-control bg-white" required>
+              <input type="date" name="date" class="form-control rounded bg-white" required>
               <h6 class="font-weight-bold pt-4 pb-1">Service Time:</h6>
-              <input type="time" name="time" class="form-control bg-white" required>
+              <input type="time" name="time" class="form-control rounded bg-white" required>
 
 
               <h6 class="font-weight-bold pt-4 pb-1">Upload Image:</h6>
@@ -482,13 +499,15 @@ $conn= new mysqli($servername, $username, $password, $dbname);
                   <input type="file" class="form-control-file d-none" id="file-upload" name="file">
                 </label>
               </div>
+              <h2>Estimate Cost:</h2>
+              <h4 id="cost"></h4>
             </div>
           </div>
         </fieldset>
 
 
 
-        <fieldset class="border bg-white px-3 px-md-4 py-4 my-5 ad-feature bg-gray">
+        <fieldset class="shadow rounded bg-white px-3 px-md-4 py-4 my-5 ad-feature bg-gray">
           <div class="row">
             <div class="col-lg-12">
 
