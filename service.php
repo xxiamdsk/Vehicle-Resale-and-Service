@@ -499,11 +499,39 @@ $conn= new mysqli($servername, $username, $password, $dbname);
                   <input type="file" class="form-control-file d-none" id="file-upload" name="file">
                 </label>
               </div>
-              <h2>Estimate Cost:</h2>
-              <h4 id="cost"></h4>
+              <h6 class="font-weight-bold pt-4 pb-1" >Estimate Cost:</h6>
+              <input type="text" class="form-control rounded bg-white" value="0" id="cost" >
             </div>
           </div>
         </fieldset>
+
+        <!-- script code for cost calculation according to service selected -->
+        <script>
+          var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+          var cost = 0;
+
+          checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+              // if checked add to cost else subtract except for main checkbox
+              if (checkbox.checked && checkbox.id !== 'mainCheckbox') {
+                cost += 1000;
+              }
+              else if (!checkbox.checked) {
+                cost -= 1000;
+              }
+
+              if (checkbox.id === 'mainCheckbox' && checkbox.checked) {
+                cost = 5000;
+              }
+              if (checkbox.id === 'mainCheckbox' && !checkbox.checked) {
+                cost = 0;
+              }
+
+              
+              document.getElementById('cost').value = cost;
+            });
+          });
+        </script>
 
 
 
