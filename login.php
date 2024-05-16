@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		} else {
 			// User not found or incorrect credentials, display error message
-			$error = "Invalid email or password";
+			$error = "Incorrect email or password";
 		}
 
 		// Close database connection

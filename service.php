@@ -595,7 +595,7 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
         <!-- submit button -->
         <div class="checkbox d-inline-flex">
-          <input type="checkbox" id="terms-&-condition" class="mt-1">
+          <input type="checkbox" id="terms-&-condition" class="mt-1" required>
           <label for="terms-&-condition" class="ml-2">By click you must agree with our
             <span> <a class="text-success" href="terms-condition.html">Terms & Condition and Posting
                 Rules.</a></span>

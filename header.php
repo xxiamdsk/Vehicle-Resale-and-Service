@@ -27,7 +27,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link hover-underline" href="#!">Sell
+                                <a class="nav-link hover-underline" href="sell.php">Sell
                                 </a>
                             </li>
                             <li class="nav-item ">
