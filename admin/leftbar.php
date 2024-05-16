@@ -1,7 +1,6 @@
  <!-- Sidebar -->
- <div class="sidebar bg-dark " style="width:280px; ">
+ <div class="sidebar bg-dark " style="width:250px; margin-top:80px;">
         <div class="container">
-            <h2 class="text-center" style="color: white; ">Admin Dashboard</h2>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="admin.php" style="color: white;"><i class="fas fa-tachometer-alt pr-2"></i> Dashboard</a>

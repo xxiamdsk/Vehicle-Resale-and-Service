@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Main content area */
         .main-content {
-            margin-left: 290px;
+            margin-left: 260px;
             padding-top: 20px;
             padding-bottom: 20px;
         }

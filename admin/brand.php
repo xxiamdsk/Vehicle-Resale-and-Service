@@ -41,7 +41,7 @@ error_reporting(0);
 
         /* Main content area */
         .main-content {
-            margin-left: 290px;
+            margin-left: 260px;
             padding-top: 20px;
             padding-bottom: 20px;
         }

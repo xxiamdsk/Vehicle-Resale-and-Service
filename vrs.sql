@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2024 at 05:29 AM
+-- Generation Time: May 16, 2024 at 08:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,8 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `approved_cars` (
-  `car_id` varchar(11) NOT NULL,
-  `resg_no` varchar(11) NOT NULL,
+  `resg_no` varchar(15) NOT NULL,
   `uid` varchar(11) NOT NULL,
   `brand` varchar(11) NOT NULL,
   `model` varchar(11) NOT NULL,
@@ -42,10 +41,12 @@ CREATE TABLE `approved_cars` (
 -- Dumping data for table `approved_cars`
 --
 
-INSERT INTO `approved_cars` (`car_id`, `resg_no`, `uid`, `brand`, `model`, `insp_no`, `price`, `location`) VALUES
-('INSP001', 'REG001', 'CUST001', 'Toyota', 'Corolla', 'INSP001', 25000, 'City A'),
-('INSP003', 'REG003', 'CUST003', 'Ford', 'Fusion', 'INSP003', 28000, 'City C'),
-('INSP004', 'REG004', 'CUST004', 'Chevrolet', 'Malibu', 'INSP004', 26000, 'City D');
+INSERT INTO `approved_cars` (`resg_no`, `uid`, `brand`, `model`, `insp_no`, `price`, `location`) VALUES
+('UP 65AB 1234', 'CUST001', 'Maruti', 'Swift', 'INSP001', 500000, 'Lucknow'),
+('UP 65AB 1236', 'CUST003', 'Honda', 'City', 'INSP003', 900000, 'Prayagraj'),
+('UP 65AB 1238', 'CUST005', 'Toyota', 'Innova', 'INSP005', 1200000, 'Lucknow'),
+('UP 65AB 1240', 'CUST007', 'Mahindra', 'Scorpio', 'INSP007', 1100000, 'Prayagraj'),
+('UP 65AB 1242', 'CUST009', 'Renault', 'Duster', 'INSP009', 700000, 'Lucknow');
 
 -- --------------------------------------------------------
 
@@ -55,14 +56,15 @@ INSERT INTO `approved_cars` (`car_id`, `resg_no`, `uid`, `brand`, `model`, `insp
 
 CREATE TABLE `booking` (
   `b_no` varchar(11) NOT NULL,
-  `resg_no` varchar(11) NOT NULL,
+  `resg_no` varchar(20) NOT NULL,
   `uid` varchar(11) NOT NULL,
   `brand` varchar(11) NOT NULL,
   `model` varchar(11) NOT NULL,
   `sc_id` varchar(11) NOT NULL,
   `amount` int(11) NOT NULL,
-  `location` varchar(21) NOT NULL,
+  `location` varchar(30) NOT NULL,
   `date` date NOT NULL,
+  `service` varchar(25) NOT NULL,
   `status` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -70,17 +72,17 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`b_no`, `resg_no`, `uid`, `brand`, `model`, `sc_id`, `amount`, `location`, `date`, `status`) VALUES
-('BK001', 'ABC123', 'CUST001', 'Toyota', 'Corolla', 'SC001', 200, 'New York', '2024-05-01', 'Confirmed'),
-('BK002', 'DEF456', 'CUST002', 'Honda', 'Civic', 'SC002', 180, 'Los Angeles', '2024-05-02', 'Confirmed'),
-('BK003', 'GHI789', 'CUST003', 'Ford', 'Fusion', 'SC003', 220, 'Chicago', '2024-05-03', 'Pending'),
-('BK004', 'JKL012', 'CUST004', 'Chevrolet', 'Malibu', 'SC004', 240, 'Houston', '2024-05-04', 'Confirmed'),
-('BK005', 'MNO345', 'CUST005', 'Nissan', 'Altima', 'SC005', 210, 'Phoenix', '2024-05-05', 'Confirmed'),
-('BK006', 'PQR678', 'CUST006', 'Toyota', 'Camry', 'SC006', 230, 'Philadelphia', '2024-05-06', 'Pending'),
-('BK007', 'STU901', 'CUST007', 'Honda', 'Accord', 'SC007', 190, 'San Antonio', '2024-05-07', 'Confirmed'),
-('BK008', 'VWX234', 'CUST008', 'Ford', 'Focus', 'SC008', 200, 'San Diego', '2024-05-08', 'Pending'),
-('BK009', 'YZA567', 'CUST009', 'Chevrolet', 'Impala', 'SC009', 250, 'Dallas', '2024-05-09', 'Confirmed'),
-('BK010', 'BCD890', 'CUST010', 'Nissan', 'Sentra', 'SC010', 220, 'San Jose', '2024-05-10', 'Confirmed');
+INSERT INTO `booking` (`b_no`, `resg_no`, `uid`, `brand`, `model`, `sc_id`, `amount`, `location`, `date`, `service`, `status`) VALUES
+('BK001', 'UP 65AB 1234', 'CUST001', 'Maruti', 'Swift', 'SC002', 5000, 'Lucknow', '2024-06-01', 'Oil Change', 'Completed'),
+('BK002', 'UP 65AB 1235', 'CUST002', 'Hyundai', 'i20', 'SC001', 6000, 'Varanasi', '2024-06-02', 'Tire Replacement', 'Pending'),
+('BK003', 'UP 65AB 1236', 'CUST003', 'Honda', 'City', 'SC004', 7000, 'Prayagraj', '2024-06-03', 'Brake Service', 'Completed'),
+('BK004', 'UP 65AB 1237', 'CUST004', 'Tata', 'Nexon', 'SC003', 8000, 'Kanpur', '2024-06-04', 'Battery Check', 'In Progress'),
+('BK005', 'UP 65AB 1238', 'CUST005', 'Toyota', 'Innova', 'SC002', 9000, 'Lucknow', '2024-06-05', 'Engine Service', 'Pending'),
+('BK006', 'UP 65AB 1239', 'CUST006', 'Ford', 'Ecosport', 'SC001', 5500, 'Varanasi', '2024-06-06', 'Transmission Check', 'Completed'),
+('BK007', 'UP 65AB 1240', 'CUST007', 'Mahindra', 'Scorpio', 'SC004', 7500, 'Prayagraj', '2024-06-07', 'Suspension Repair', 'Completed'),
+('BK008', 'UP 65AB 1241', 'CUST008', 'Kia', 'Seltos', 'SC003', 6000, 'Kanpur', '2024-06-08', 'Oil Change', 'Pending'),
+('BK009', 'UP 65AB 1242', 'CUST009', 'Renault', 'Duster', 'SC002', 6500, 'Lucknow', '2024-06-09', 'Tire Replacement', 'In Progress'),
+('BK010', 'UP 65AB 1243', 'CUST010', 'Volkswagen', 'Polo', 'SC001', 7000, 'Varanasi', '2024-06-10', 'Brake Service', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,7 @@ INSERT INTO `booking` (`b_no`, `resg_no`, `uid`, `brand`, `model`, `sc_id`, `amo
 
 CREATE TABLE `cars` (
   `insp_no` varchar(11) NOT NULL,
-  `resg_no` varchar(11) NOT NULL,
+  `resg_no` varchar(20) NOT NULL,
   `uid` varchar(11) NOT NULL,
   `brand` varchar(11) NOT NULL,
   `model` varchar(11) NOT NULL,
@@ -107,13 +109,16 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`insp_no`, `resg_no`, `uid`, `brand`, `model`, `price`, `date`, `kms`, `location`, `inspection`, `result`) VALUES
-('INSP001', 'REG001', 'CUST001', 'Toyota', 'Corolla', 25000, '2024-03-04', 5000, 'City A', 'Full Inspection', 'Pass'),
-('INSP002', 'REG002', 'CUST002', 'Honda', 'Civic', 22000, '2024-03-04', 4000, 'City B', 'Basic Inspection', 'Fail'),
-('INSP003', 'REG003', 'CUST003', 'Ford', 'Fusion', 28000, '2024-03-04', 6000, 'City C', 'Full Inspection', 'Pass'),
-('INSP004', 'REG004', 'CUST004', 'Chevrolet', 'Malibu', 26000, '2024-03-04', 5500, 'City D', 'Basic Inspection', 'Pass'),
-('INSP005', 'REG005', 'CUST005', 'Nissan', 'Altima', 27000, '2024-03-04', 5800, 'City E', 'Full Inspection', 'Fail'),
-('INSP007', 'REG007', 'CUST007', 'Honda', 'Accord', 32000, '2024-03-04', 6500, 'City G', 'Full Inspection', 'Fail'),
-('INSP009', 'REG009', 'CUST009', 'Chevrolet', 'Cruze', 29000, '2024-03-04', 5800, 'City I', 'Full Inspection', 'Fail');
+('INSP001', 'UP 65AB 1234', 'CUST001', 'Maruti', 'Swift', 500000, '2024-05-01', 20000, 'Lucknow', '2024-05-10', 'Passed'),
+('INSP002', 'UP 65AB 1235', 'CUST002', 'Hyundai', 'i20', 600000, '2024-05-02', 15000, 'Varanasi', '2024-05-11', 'Failed'),
+('INSP003', 'UP 65AB 1236', 'CUST003', 'Honda', 'City', 900000, '2024-05-03', 30000, 'Prayagraj', '2024-05-12', 'Passed'),
+('INSP004', 'UP 65AB 1237', 'CUST004', 'Tata', 'Nexon', 800000, '2024-05-04', 25000, 'Kanpur', '2024-05-13', 'Failed'),
+('INSP005', 'UP 65AB 1238', 'CUST005', 'Toyota', 'Innova', 1200000, '2024-05-05', 40000, 'Lucknow', '2024-05-14', 'Passed'),
+('INSP006', 'UP 65AB 1239', 'CUST006', 'Ford', 'Ecosport', 750000, '2024-05-06', 18000, 'Varanasi', '2024-05-15', 'Failed'),
+('INSP007', 'UP 65AB 1240', 'CUST007', 'Mahindra', 'Scorpio', 1100000, '2024-05-07', 35000, 'Prayagraj', '2024-05-16', 'Passed'),
+('INSP008', 'UP 65AB 1241', 'CUST008', 'Kia', 'Seltos', 950000, '2024-05-08', 22000, 'Kanpur', '2024-05-17', 'Failed'),
+('INSP009', 'UP 65AB 1242', 'CUST009', 'Renault', 'Duster', 700000, '2024-05-09', 28000, 'Lucknow', '2024-05-18', 'Passed'),
+('INSP010', 'UP 65AB 1243', 'CUST010', 'Volkswagen', 'Polo', 650000, '2024-05-10', 16000, 'Varanasi', '2024-05-19', 'Failed');
 
 -- --------------------------------------------------------
 
@@ -124,9 +129,9 @@ INSERT INTO `cars` (`insp_no`, `resg_no`, `uid`, `brand`, `model`, `price`, `dat
 CREATE TABLE `customer` (
   `uid` varchar(11) NOT NULL,
   `name` varchar(21) NOT NULL,
-  `email` varchar(21) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `pswd` varchar(20) NOT NULL,
-  `ph_no` int(15) NOT NULL,
+  `ph_no` bigint(30) NOT NULL,
   `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -135,15 +140,16 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`uid`, `name`, `email`, `pswd`, `ph_no`, `address`) VALUES
-('CUST001', 'John Doe', 'john@example.com', '', 1234567890, '123 Main St, Anytown, USA'),
-('CUST002', 'Jane Smith', 'jane@example.com', '', 2147483647, '456 Elm St, Othertown, USA'),
-('CUST003', 'Bob Johnson', 'bob@example.com', '', 2147483647, '789 Oak St, Anycity, USA'),
-('CUST004', 'Alice Williams', 'alice@example.com', '', 1112223333, '321 Pine St, Someplace, USA'),
-('CUST005', 'David Brown', 'david@example.com', '', 2147483647, '678 Maple St, Othercity, USA'),
-('CUST007', 'Emily Davis', 'emily@example.com', '', 2147483647, '202 Sunrise Ave, Anywhere, USA'),
-('CUST009', 'Jessica Taylor', 'jessica@example.com', '', 1231231234, '404 Ocean Dr, Anycity, USA'),
-('CUST010', 'Christopher Martinez', 'christopher@example.c', '', 2147483647, '505 Mountain Rd, Someplace, USA'),
-('CUST011', 'Deepak Singh Kushwaha', 'ds2390521@gmail.com', '12', 8269513, 'Lathiya village Bari bazar Varanasi uttarpradesh');
+('CUST001', 'Aarav Sharma', 'aarav.sharma@example.com', 'password123', 9123456780, '123 MG Road, Mumbai, Maharashtra'),
+('CUST002', 'Anaya Gupta', 'anaya.gupta@example.com', 'password123', 9123456781, '456 MG Road, Pune, Maharashtra'),
+('CUST003', 'Vivaan Singh', 'vivaan.singh@example.com', 'password123', 9123456782, '789 MG Road, Delhi, Delhi'),
+('CUST004', 'Diya Patel', 'diya.patel@example.com', 'password123', 9123456783, '321 MG Road, Ahmedabad, Gujarat'),
+('CUST005', 'Ayaan Kumar', 'ayaan.kumar@example.com', 'password123', 9123456784, '654 MG Road, Bengaluru, Karnataka'),
+('CUST006', 'Isha Reddy', 'isha.reddy@example.com', 'password123', 9123456785, '987 MG Road, Hyderabad, Telangana'),
+('CUST007', 'Arjun Menon', 'arjun.menon@example.com', 'password123', 9123456786, '147 MG Road, Kochi, Kerala'),
+('CUST008', 'Riya Kapoor', 'riya.kapoor@example.com', 'password123', 9123456787, '258 MG Road, Jaipur, Rajasthan'),
+('CUST009', 'Krishna Iyer', 'krishna.iyer@example.com', 'password123', 9123456788, '369 MG Road, Chennai, Tamil Nadu'),
+('CUST010', 'Sara Desai', 'sara.desai@example.com', 'password123', 9123456789, '471 MG Road, Surat, Gujarat');
 
 -- --------------------------------------------------------
 
@@ -154,6 +160,8 @@ INSERT INTO `customer` (`uid`, `name`, `email`, `pswd`, `ph_no`, `address`) VALU
 CREATE TABLE `service_center` (
   `sc_id` varchar(11) NOT NULL,
   `name` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `pswd` varchar(21) NOT NULL,
   `ph_no` varchar(11) NOT NULL,
   `location` varchar(21) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -162,17 +170,11 @@ CREATE TABLE `service_center` (
 -- Dumping data for table `service_center`
 --
 
-INSERT INTO `service_center` (`sc_id`, `name`, `ph_no`, `location`) VALUES
-('SC001', 'Service Cent', '1234567890', 'Location 1'),
-('SC002', 'Service Cent', '2345678901', 'Location 2'),
-('SC003', 'Service Cent', '3456789012', 'Location 3'),
-('SC004', 'Service Cent', '4567890123', 'Location 4'),
-('SC005', 'Service Cent', '5678901234', 'Location 5'),
-('SC006', 'Service Cent', '6789012345', 'Location 6'),
-('SC007', 'Service Cent', '7890123456', 'Location 7'),
-('SC008', 'Service Cent', '8901234567', 'Location 8'),
-('SC009', 'Service Cent', '9012345678', 'Location 9'),
-('SC010', 'Service Cent', '0123456789', 'Location 10');
+INSERT INTO `service_center` (`sc_id`, `name`, `email`, `pswd`, `ph_no`, `location`) VALUES
+('SC001', 'Service Cent', 'sc1@gmail.com', 'sc1', '1234567890', 'Varanasi'),
+('SC002', 'Service Cent', 'sc2@gmail.com', 'sc2', '2345678901', 'Lucknow'),
+('SC003', 'Service Cent', 'sc3@gmail.com', 'sc3', '3456789012', 'Kanpur'),
+('SC004', 'Service Center', 'sc4@gmail.com', 'sc4', '8269513294', 'Prayagraj');
 
 -- --------------------------------------------------------
 
@@ -196,8 +198,8 @@ CREATE TABLE `sold_cars` (
 -- Indexes for table `approved_cars`
 --
 ALTER TABLE `approved_cars`
-  ADD PRIMARY KEY (`car_id`),
-  ADD KEY `approved_resg_no` (`resg_no`);
+  ADD PRIMARY KEY (`resg_no`),
+  ADD UNIQUE KEY `app_insp_np` (`insp_no`);
 
 --
 -- Indexes for table `booking`
@@ -212,14 +214,14 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `cars`
   ADD PRIMARY KEY (`insp_no`),
-  ADD UNIQUE KEY `resg_no` (`resg_no`),
   ADD KEY `cars_uid` (`uid`);
 
 --
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`uid`);
+  ADD PRIMARY KEY (`uid`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `service_center`
@@ -242,13 +244,7 @@ ALTER TABLE `sold_cars`
 -- Constraints for table `approved_cars`
 --
 ALTER TABLE `approved_cars`
-  ADD CONSTRAINT `approved_resg_no` FOREIGN KEY (`resg_no`) REFERENCES `cars` (`resg_no`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `cars`
---
-ALTER TABLE `cars`
-  ADD CONSTRAINT `cars_uid` FOREIGN KEY (`uid`) REFERENCES `customer` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `approved_regs-no` FOREIGN KEY (`insp_no`) REFERENCES `cars` (`insp_no`);
 
 --
 -- Constraints for table `sold_cars`
