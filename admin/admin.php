@@ -40,9 +40,9 @@ error_reporting(0);
 
         /* Main content area */
         .main-content {
-            margin-left: 300px;
-            /* Same width as sidebar */
-            padding: 20px;
+            margin-left: 290px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
         .user-details {

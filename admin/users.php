@@ -64,9 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Main content area */
         .main-content {
-            margin-left: 300px;
-            /* Same width as sidebar */
-            padding: 20px;
+            margin-left: 290px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
         .user-details {
@@ -110,8 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Sidebar -->
 
     <!-- Main content -->
-    <div class="user-details">
-        <h1>Booking</h1>
+    <div class="main-content">
+        <h1>Users</h1>
         <table>
             <tr>
             <th>User ID</th>

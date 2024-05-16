@@ -285,7 +285,7 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
   <section class="advt-post bg-gray py-5">
     <div class="container">
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"" method="POST" id="form">
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="form">
 
         <fieldset class=" shadow rounded px-3 px-md-4 py-4 my-5  bg-gray">
           <div class="row">
@@ -604,6 +604,21 @@ $conn= new mysqli($servername, $username, $password, $dbname);
         <button type="submit" class="btn btn-primary d-block mt-2">Book Your Service</button>
       </form>
     </div>
+
+     <!-- confirmation test Drive modal -->
+     <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="confirmation" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <i class="fa fa-check-circle text-success fa-3x"></i>
+            <h3 class="mt-2">Your Service has been booked successfully</h3>
+            <p class="mt-3">Our team will contact you soon</p>
+            <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
 
@@ -628,6 +643,20 @@ Essential Scripts
   <script src="plugins/google-map/map.js" defer></script>
 
   <!-- <script src="js/script.js"></script> -->
+
+  <script>
+        $(document).ready(function () {
+            $("#form").submit(function (e) {
+                e.preventDefault();
+                $("#confirmation").modal("show");
+            });
+        });
+
+        // after click on close button pass the all data to the db
+        $("#confirmation").on("hidden.bs.modal", function () {
+            $("#form").unbind("submit").submit();
+        });
+    </script>
 
 </body>
 

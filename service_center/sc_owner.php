@@ -62,7 +62,7 @@ error_reporting(0);
                 <h2>Welcome to the Service Center Dashboard</h2>
                 <p>This is the main content area.</p>
                 <div class="row">
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Users</h5>
@@ -97,7 +97,7 @@ error_reporting(0);
                                 <a href="cars.php" class="btn btn-primary">Cars</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-body">

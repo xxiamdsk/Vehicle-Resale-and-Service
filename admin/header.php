@@ -1,4 +1,4 @@
-<header style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-left: 300px;">
+<header style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-left: 280px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

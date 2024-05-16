@@ -3,6 +3,129 @@ session_start();
 include ('config.php');
 error_reporting(0);
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	// Database connection parameters
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "vrs";
+
+	// Create connection
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+      // Function to generate a new Inspection ID as INSP001
+          function generateInspectionID($db)
+            {
+                $query = "SELECT MAX(insp_no) AS last_id FROM cars";
+                $result = mysqli_query($db, $query);
+        
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    $lastID = $row['last_id'];
+        
+                    // Extract the numeric part from the last ID
+                    $numericPart = intval(substr($lastID, 4));
+        
+                    // Increment the numeric part
+                    $newNumericPart = $numericPart + 1;
+        
+                    // Format the new ID with leading zeros
+                    $newID = 'INSP' . sprintf('%03d', $newNumericPart);
+        
+                    return $newID;
+                } else {
+                    // If no records found, start from INSP001
+                    return 'INSP001';
+                }
+            }
+    
+
+    $inspection_id = generateInspectionID($conn);
+
+
+	// check if session is on or not
+	if (isset($_SESSION['email'])) {
+		$email = $_SESSION['email'];
+		$sql = "SELECT uid FROM customer WHERE email = '$email'";
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+		$customer_id = $row['uid'];
+	} else {
+		// Function to generate a new customer ID
+		function generateCustomerID($db)
+		{
+			$query = "SELECT MAX(uid) AS last_id FROM customer";
+			$result = mysqli_query($db, $query);
+
+			if ($result && mysqli_num_rows($result) > 0) {
+				$row = mysqli_fetch_assoc($result);
+				$lastID = $row['last_id'];
+
+				// Extract the numeric part from the last ID
+				$numericPart = intval(substr($lastID, 4));
+
+				// Increment the numeric part
+				$newNumericPart = $numericPart + 1;
+
+				// Format the new ID with leading zeros
+				$newID = 'CUST' . sprintf('%03d', $newNumericPart);
+
+				return $newID;
+			} else {
+				// If no records found, start from CUST001
+				return 'CUST001';
+			}
+		}
+	}
+
+	$customer_id = generateCustomerID($conn);
+	$contactName = $_POST['name'];
+	$email = $_POST['email'];
+	$passwd = "0";
+	$contactNumber = $_POST['number'];
+	$address = $_POST['address'];
+
+	// SQL query to insert new user into database
+	$sql = "INSERT INTO customer (uid,name,email, pswd,ph_no,address) VALUES (?, ?,?,?,?,?)";
+	$stmt = $conn->prepare($sql);
+	$stmt->bind_param("ssssss", $customer_id, $contactName, $email, $passwd, $contactNumber, $address);
+
+    $brand = $_POST['Brand'];
+    $model = $_POST['model'];
+    $regno = $_POST['regsno'];
+    $price = $_POST['price'];
+    $date = $_POST['year'];
+    $kms= $_POST['kms'];
+    $location= $_POST['location'];
+
+    $sql="INSERT INTO cars (insp_no,resg_no,uid,brand,model,price,date,kms,location) VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $stmt1 = $conn->prepare($sql);
+    $stmt1->bind_param("sssssssss", $inspection_id, $regno, $customer_id, $brand, $model, $price, $date, $kms, $location);
+
+
+
+    if ($stmt->execute() && $stmt1->execute()){
+        // booking successful
+        $_SESSION['email'] = $email;
+        $_SESSION['name'] = $contactName;
+        
+        // Redirect to a secure page after successful booking
+        header("Location: index.php");
+        echo "Booking done";
+        exit();
+    
+      } else {
+        // Registration failed, display an error message
+        $error = "booking failed";
+        echo $error;
+      }
+    
+      // Close database connection
+      $conn->close();
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -500,7 +623,7 @@ error_reporting(0);
 
         <!-- selling car form -->
         <div class="container" id="sellForm" style="display:none;" style="display: block;padding-bottom: 25px;">
-            <form method=" POST" id="form">
+            <form method=" POST" id="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <fieldset class=" shadow rounded px-3 px-md-4 py-4 my-5  bg-gray">
                     <div class="row">
                         <div class="col-lg-12">
@@ -554,6 +677,9 @@ error_reporting(0);
 
                             <h6 class="font-weight-bold pt-4 pb-1">Car Price:</h6>
                             <input type="number" placeholder="Price" name="price" class="form-control rounded bg-white"
+                                required>
+                            <h6 class="font-weight-bold pt-4 pb-1">KMS:</h6>
+                            <input type="number" placeholder="KMS" name="kms" class="form-control rounded bg-white"
                                 required>
 
                         </div>
