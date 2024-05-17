@@ -87,7 +87,7 @@ label {
 }
 
 .nav-pills.with-background .nav-link.active {
-  background: #5672f9;
+  background: #ff9900;
   position: relative;
   transition: 0s;
 }
@@ -105,7 +105,7 @@ label {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #5672f9;
+  border-top: 10px solid #ff9900;
   clear: both;
   transition: all 0.2s ease-in 0s;
 }
@@ -382,7 +382,7 @@ button {
   right: 0;
   width: 40px;
   height: 5px;
-  background-color: #5672f9;
+  background-color: #ff9900;
 }
 
 .section-title p {
@@ -463,13 +463,13 @@ button {
 
 .btn-main,
 .btn-main-sm {
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
 }
 
 .btn-main:hover,
 .btn-main-sm:hover {
-  background: #082de1;
+  background: #c67701;
   color: #fff;
 }
 
@@ -485,19 +485,19 @@ button {
 }
 
 .btn-secondary:hover {
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
   border-color: #fff;
 }
 
 .btn-transparent {
   background: transparent;
-  color: #5672f9;
-  border: 1px solid #5672f9;
+  color: #ff9900;
+  border: 1px solid #ff9900;
 }
 
 .btn-transparent:hover {
-  background: #082de1;
+  background: #ff9900;
   color: #fff;
 }
 
@@ -633,7 +633,7 @@ ul.pagination .active a {
 }
 
 .page-search {
-  background: #5672f9;
+  background: #d1d1d1;
   padding: 30px 0;
 }
 
@@ -733,14 +733,16 @@ ul.pagination .active a {
 }
 
 .login-button {
-  border: 2px solid #000000a6;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #7a7a7aa6;
   margin-right: 8px;
   padding: 6px 20px !important;
 }
 
 .login-button:focus,
 .login-button:hover {
-  background: #fe7f17ab;
+  background: #ff9900;
   color: rgb(255, 252, 252)
 }
 
@@ -810,7 +812,7 @@ ul.pagination .active a {
 }
 
 .main-nav .nav-item.active .nav-link {
-  color: #5672f9;
+  color: #ff9900;
 }
 
 .main-nav .search .nav-link i {
@@ -818,8 +820,8 @@ ul.pagination .active a {
   height: 43px;
   width: 43px;
   line-height: 43px;
-  color: #5672f9;
-  border: 1px solid #5672f9;
+  color: #ff9900;
+  border: 1px solid #ff9900;
   border-radius: 3px;
   text-align: center;
 }
@@ -829,9 +831,9 @@ ul.pagination .active a {
 }
 
 .main-nav .search .input-group .input-group-addon {
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
-  border: 1px solid #5672f9;
+  
 }
 
 .main-nav .search .input-group .input-group-addon i {
@@ -851,7 +853,7 @@ ul.pagination .active a {
 }
 .dropdown-menu {
   padding: 0;
-  border-radius: 0;
+  border-radius: 1rem;
 }
 
 .dropdown-menu li:first-child {
@@ -868,11 +870,11 @@ ul.pagination .active a {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background: #5672f9;
+  background: #ff9900;
 }
 
 .dropdown-submenu.active>a {
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
 }
 
@@ -991,10 +993,10 @@ ul.pagination .active a {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 5px;
+  height: 3px;
   bottom: 0;
   left: 0;
-  background-color: #ca7514;
+  background-color: #ff9900;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -1007,9 +1009,9 @@ ul.pagination .active a {
 
 .hero-area .content-block h1,
 .hero-area-2 .content-block h1 {
-  color: #860a0a;
-  font-size: 65px;
-  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-weight: lighter;
+  font-size: 5rem ;
   letter-spacing: 0.05em;
   margin-bottom: 15px;
 }
@@ -1043,7 +1045,7 @@ ul.pagination .active a {
 
 .hero-area .content-block p,
 .hero-area-2 .content-block p {
-  color: #860a0a;
+  color: #4b4b4b;
   font-size: 20px;
 }
 
@@ -1173,7 +1175,7 @@ ul.pagination .active a {
 }
 
 .user-dashboard-menu li.active a {
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
 }
 
@@ -1190,11 +1192,11 @@ ul.pagination .active a {
 }
 
 .user-dashboard-menu li a:hover {
-  color: #5672f9;
+  color: #ff9900;
 }
 
 .user-dashboard-menu li a:hover span {
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
 }
 
@@ -1588,7 +1590,7 @@ ul.pagination .active a {
   width: 35px;
   height: 35px;
   line-height: 35px;
-  background: #025fd3;
+  background: #ff9900;
   text-align: center;
   color: #fff;
   border-radius: 50%;
@@ -1637,7 +1639,7 @@ ul.pagination .active a {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
   display: inline-block;
   padding: 4px 8px;
@@ -1672,7 +1674,7 @@ ul.pagination .active a {
 }
 
 .product-item .product-ratings .selected i {
-  color: #5672f9;
+  color: rgb(255, 247, 0);
 }
 
 .product-details .product-title {
@@ -2767,7 +2769,7 @@ form textarea {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background: #5672f9;
+  background: #ff9900;
   color: #fff;
   transition: 0.3s;
   z-index: 999556;
