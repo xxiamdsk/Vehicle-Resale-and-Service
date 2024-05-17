@@ -57,7 +57,7 @@ error_reporting(0);
 				<div class="col-md-12">
 					<!-- Header Contetnt -->
 					<div class="content-block">
-						<h1>Buy & Sell Near You </h1>
+						<h1>Excellence in Motion</h1>
 						<!-- <p>Join the millions who buy and sell from each other <br> everyday in local communities around
 							the world</p> -->
 						<!-- <div class="short-popular-category-list text-center">
@@ -217,7 +217,7 @@ error_reporting(0);
 										style="height: 58px; width: 58px;" alt="" srcset="">
 									<h4>Selling a Car</h4>
 								</div>
-								<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+								<p style="text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
 							</div>
 							
 						</div> <!-- /Category List -->
@@ -253,7 +253,7 @@ error_reporting(0);
 													alt="" srcset="">
 												<h4>Support 24/7</h4>
 											</div>
-											<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+											<p style="text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
 							</div>
 						</div> <!-- /Category List -->
 						
