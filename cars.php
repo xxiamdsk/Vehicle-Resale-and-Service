@@ -199,7 +199,7 @@ error_reporting(0);
 
                     <!-- collect info of cars from cars table -->
                     <?php
-                    $sql = "SELECT * FROM cars where result='pass'";
+                    $sql = "SELECT * FROM cars where result='Passed'";
                     $result = mysqli_query($conn, $sql);
                     $num = mysqli_num_rows($result);
                     if ($num > 0) {

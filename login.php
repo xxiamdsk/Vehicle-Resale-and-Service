@@ -25,18 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 
 		// Check if the user is an admin
-		// $sql = "SELECT * FROM admin WHERE email = '$email' AND pswd = '$password'";
-		// $result = $conn->query($sql);
-		// if ($result->num_rows == 1) {
-		//     // If the user is an admin, set session variables and redirect to admin dashboard
-		//     $_SESSION['user_type'] = 'admin';
-		//     $_SESSION['email'] = $email;
-		//     header("Location: admin/");
-		//     exit();
-		// }
-
-
-		// Check if the user is an admin
 		if ($email == 'admin@gmail.com' && $passwd == 'admin') {
 			// If the user is an admin, set session variables and redirect to admin dashboard
 			$_SESSION['email'] = $email;
@@ -90,10 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<meta name="theme-name" content="classimax" />
 
 	<!-- favicon -->
-	<!-- <link href="images/favicon.png" rel="shortcut icon"> -->
-	<!-- 
-  Essential stylesheets
-  =====================================-->
+	<link href="images/favicon.png" rel="shortcut icon">
+	<!-- Essential stylesheets-->
 	<link href="plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
 	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">

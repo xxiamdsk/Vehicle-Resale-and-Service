@@ -1,15 +1,10 @@
 <?php
 session_start();
 include ('config.php');
-error_reporting(0);
-
-?>
-
+error_reporting(0); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
 	<title>VRS</title>
@@ -21,13 +16,9 @@ error_reporting(0);
 	<meta name="author" content="Themefisher">
 	<meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
-
 	<!-- favicon -->
 	<link href="images/wheelXchange(1).png" rel="shortcut icon">
-
-	<!-- 
-  Essential stylesheets
-  =====================================-->
+	<!-- Essential stylesheets-->
 	<link href="plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
 	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -38,10 +29,7 @@ error_reporting(0);
 	<link href="css/style.css" rel="stylesheet">
 
 </head>
-
 <body class="body-wrapper">
-
-
 	<!--Header-->
 	<?php include ('header.php'); ?>
 	<!-- /Header -->
@@ -49,7 +37,6 @@ error_reporting(0);
 	<!--===============================
 =            Hero Area            =
 ================================-->
-
 	<section class="hero-area bg-1 text-center ">
 		<!-- Container Start -->
 		<div class="container">
@@ -58,23 +45,6 @@ error_reporting(0);
 					<!-- Header Contetnt -->
 					<div class="content-block">
 						<h1>Excellence in Motion</h1>
-						<!-- <p>Join the millions who buy and sell from each other <br> everyday in local communities around
-							the world</p> -->
-						<!-- <div class="short-popular-category-list text-center">
-							<h2>Popular Category</h2>
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a href="cars.php"><i class="fa fa-car"></i> Cars</a>
-								</li>
-								<li class="list-inline-item">
-									<a href="#"><i class="fa fa-handshake-o"></i> Testimonal</a>
-								</li>
-								<li class="list-inline-item">
-									<a href="Service.php"><i class="fa fa-cogs"></i> Service Center</a>
-								</li>
-							</ul>
-						</div> -->
-
 					</div>
 					<!-- Advance Search -->
 					<div class="advance-search">
@@ -157,7 +127,7 @@ error_reporting(0);
 											</div>
 											<div class="card-body">
 												<h4 class="card-title"><a href="<?php echo $url; ?>"><?php echo $row['brand'];
-												echo ", " . $row['model'] ?></a></h4>
+												   echo ", " . $row['model'] ?></a></h4>
 												<ul class="list-inline product-meta">
 													<li class="list-inline-item">
 														<a href="<?php echo $url; ?>"><i class="fa fa-eye"></i>Most Viewed</a>
@@ -217,18 +187,33 @@ error_reporting(0);
 										style="height: 58px; width: 58px;" alt="" srcset="">
 									<h4>Selling a Car</h4>
 								</div>
-								<p style="text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+								<p style="text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur
+									unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.
+								</p>
 							</div>
-							
+
+						</div> <!-- /Category List -->
+						<!-- Category list -->
+						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
+							<div class="category-block">
+								<div class="header">
+									<img src="https://themewagon.github.io/hvac/img/services/services-2.png" alt=""
+										srcset="">
+
+									<h4>Buying a Car</h4>
+								</div>
+								<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
+							</div>
 						</div> <!-- /Category List -->
 						<!-- Category list -->
 						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
 								<div class="category-block">
 									<div class="header">
-										<img src="https://themewagon.github.io/hvac/img/services/services-2.png" alt=""
+										<img src="https://themewagon.github.io/hvac/img/services/services-3.png" alt=""
 											srcset="">
 
-										<h4>Buying a Car</h4>
+										<h4>Car Maintenance</h4>
 									</div>
 									<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
 							</div>
@@ -237,121 +222,105 @@ error_reporting(0);
 						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
 									<div class="category-block">
 										<div class="header">
-											<img src="https://themewagon.github.io/hvac/img/services/services-3.png"
+											<img src="https://themewagon.github.io/hvac/img/services/services-4.png"
 												alt="" srcset="">
-
-											<h4>Car Maintenance</h4>
+											<h4>Support 24/7</h4>
 										</div>
-										<p style="text-align: center;"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
-							</div>
-						</div> <!-- /Category List -->
-						<!-- Category list -->
-						<div class=" col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-										<div class="category-block">
-											<div class="header">
-												<img src="https://themewagon.github.io/hvac/img/services/services-4.png"
-													alt="" srcset="">
-												<h4>Support 24/7</h4>
-											</div>
-											<p style="text-align: center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam optio inventore possimus minima ipsa voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae rem! Quod totam sint culpa voluptates.</p>
-							</div>
-						</div> <!-- /Category List -->
-						
+										<p style="text-align: center;">Lorem ipsum dolor sit, amet consectetur
+											adipisicing elit. Illo quisquam optio inventore possimus minima ipsa
+											voluptatum voluptas consectetur unde, commodi maxime eligendi qui molestiae
+											rem! Quod totam sint culpa voluptates.</p>
+									</div>
+								</div> <!-- /Category List -->
 
 
+
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<!-- Container End -->
+				<!-- Container End -->
 	</section>
 
-		<!--==========================================
+	<!--==========================================
 		=           Buy in ease Section            =
 		===========================================-->
 
 	<section class=" section bg-gray">
-											<div class="container">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="section-title">
-															<h2 style="font-weight: 800;">Buy in 3 Easy Steps</h2>
-															<p>How it Works</p>
-														</div>
-													</div>
-												</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<h2 style="font-weight: 800;">Buy in 3 Easy Steps</h2>
+						<p>How it Works</p>
+					</div>
+				</div>
+			</div>
 
-												<div class="row">
-													<div class="col-lg-12">
-														<div class="trending-ads-slide">
-															<div class="col-sm-12 col-lg-4">
-																<!-- product card -->
-																<div class="product-item bg-light">
-																	<div class="card">
-																		<div class="thumb-content">
-																			<div class="price">1.</div>
-																			<a href="">
-																				<img class="card-img-top img-fluid"
-																					src="images/find car.png"
-																					alt="Card image cap">
-																			</a>
-																		</div>
-																		<div class="card-body">
-																			<h4 class="card-title"
-																				style="text-align: center;"><a
-																					href="single.html">Find the Perfect
-																					Car</a></h4>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-sm-12 col-lg-4">
-																<!-- product card -->
-																<div class="product-item bg-light">
-																	<div class="card">
-																		<div class="thumb-content">
-																			<div class="price">2.</div>
-																			<a href="">
-																				<img class="card-img-top img-fluid"
-																					src="images/test_drive.jpg"
-																					alt="Card image cap"
-																					style="height: 226px;">
-																			</a>
-																		</div>
-																		<div class="card-body">
-																			<h4 class="card-title"
-																				style="text-align: center;"><a
-																					href="single.html">Test Drive at
-																					CARS23 Hub</a></h4>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-sm-12 col-lg-4">
-																<!-- product card -->
-																<div class="product-item bg-light">
-																	<div class="card">
-																		<div class="thumb-content">
-																			<div class="price">3.</div>
-																			<a href="">
-																				<img class="card-img-top img-fluid"
-																					src="images/buy_car.jpg"
-																					alt="Card image cap">
-																			</a>
-																		</div>
-																		<div class="card-body">
-																			<h4 class="card-title"
-																				style="text-align: center;"><a
-																					href="single.html">Buy it Your Own
-																					Way</a></h4>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="trending-ads-slide">
+						<div class="col-sm-12 col-lg-4">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+										<div class="price">1.</div>
+										<a href="">
+											<img class="card-img-top img-fluid" src="images/find car.png"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title" style="text-align: center;"><a href="single.html">Find
+												the Perfect
+												Car</a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+										<div class="price">2.</div>
+										<a href="">
+											<img class="card-img-top img-fluid" src="images/test_drive.jpg"
+												alt="Card image cap" style="height: 226px;">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title" style="text-align: center;"><a href="single.html">Test
+												Drive at
+												CARS23 Hub</a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+										<div class="price">3.</div>
+										<a href="">
+											<img class="card-img-top img-fluid" src="images/buy_car.jpg"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title" style="text-align: center;"><a href="single.html">Buy it
+												Your Own
+												Way</a></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 
@@ -383,10 +352,6 @@ error_reporting(0);
 	</section>
 
 
-
-
-
-	<!-- ========================================== -->
 	<!-- Footer -->
 	<?php include ('footer.php'); ?>
 
