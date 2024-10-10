@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('config.php');
+include 'config.php';
 error_reporting(0); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ error_reporting(0); ?>
 				<div class="col-md-12">
 					<!-- Header Contetnt -->
 					<div class="content-block">
-						<h1>Excellence in Motion</h1>
+						<h1 style="font-weight:600;">Excellence in Motion</h1>
 					</div>
 					<!-- Advance Search -->
 					<div class="advance-search">
@@ -106,7 +106,8 @@ error_reporting(0); ?>
 					<div class="trending-ads-slide">
 						<!-- retrive data from database for Featured Cars -->
 						<?php
-						$sql = "SELECT * FROM cars WHERE inspection='Full Inspection'";
+						// $sql = "SELECT * FROM cars WHERE inspection='Full Inspection'";
+						$sql = "SELECT * FROM approved_cars";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0) {
 							while ($row = $result->fetch_assoc()) {
