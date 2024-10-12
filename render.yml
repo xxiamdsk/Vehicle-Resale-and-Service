@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: php-mysql-app
+    env: php
+    plan: free
+    region: oregon  # or a closer region
+    buildCommand: "composer install"  # If you're using Composer
+    startCommand: "php -S 0.0.0.0:10000 -t public"
+    envVars:
+      - key: DB_HOST
+        value: YOUR_DB_HOST
+      - key: DB_PORT
+        value: YOUR_DB_PORT
+      - key: DB_NAME
+        value: YOUR_DB_NAME
+      - key: DB_USER
+        value: YOUR_DB_USER
+      - key: DB_PASSWORD
+        value: YOUR_DB_PASSWORD
